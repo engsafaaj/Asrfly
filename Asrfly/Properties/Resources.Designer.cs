@@ -73,6 +73,16 @@ namespace Asrfly.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_add_32px {
+            get {
+                object obj = ResourceManager.GetObject("icons8_add_32px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_categorize_32px {
             get {
                 object obj = ResourceManager.GetObject("icons8_categorize_32px", resourceCulture);
@@ -86,6 +96,26 @@ namespace Asrfly.Properties {
         internal static System.Drawing.Bitmap icons8_conference_32px {
             get {
                 object obj = ResourceManager.GetObject("icons8_conference_32px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_Delete_32px {
+            get {
+                object obj = ResourceManager.GetObject("icons8_Delete_32px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_edit_32px {
+            get {
+                object obj = ResourceManager.GetObject("icons8_edit_32px", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -163,6 +193,16 @@ namespace Asrfly.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_search_32px {
+            get {
+                object obj = ResourceManager.GetObject("icons8_search_32px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_settings_32px {
             get {
                 object obj = ResourceManager.GetObject("icons8_settings_32px", resourceCulture);
@@ -186,6 +226,16 @@ namespace Asrfly.Properties {
         internal static System.Drawing.Bitmap icons8_users_32px {
             get {
                 object obj = ResourceManager.GetObject("icons8_users_32px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_xls_export_32px {
+            get {
+                object obj = ResourceManager.GetObject("icons8_xls_export_32px", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
