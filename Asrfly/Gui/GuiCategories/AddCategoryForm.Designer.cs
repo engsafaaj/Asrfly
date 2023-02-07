@@ -65,6 +65,7 @@ namespace Asrfly.Gui.GuiCategories
             this.groupBox1.Controls.Add(this.textBoxCategoryName);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.groupBox1.Location = new System.Drawing.Point(34, 12);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(595, 561);
@@ -75,6 +76,7 @@ namespace Asrfly.Gui.GuiCategories
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.ForeColor = System.Drawing.Color.Black;
             this.label1.Location = new System.Drawing.Point(254, 50);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(111, 37);
@@ -83,6 +85,7 @@ namespace Asrfly.Gui.GuiCategories
             // 
             // textBoxCategoryName
             // 
+            this.textBoxCategoryName.ForeColor = System.Drawing.Color.Black;
             this.textBoxCategoryName.Location = new System.Drawing.Point(68, 94);
             this.textBoxCategoryName.Name = "textBoxCategoryName";
             this.textBoxCategoryName.Size = new System.Drawing.Size(459, 45);
@@ -92,6 +95,7 @@ namespace Asrfly.Gui.GuiCategories
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.ForeColor = System.Drawing.Color.Black;
             this.label2.Location = new System.Drawing.Point(254, 142);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(104, 37);
@@ -101,6 +105,7 @@ namespace Asrfly.Gui.GuiCategories
             // label3
             // 
             this.label3.AutoSize = true;
+            this.label3.ForeColor = System.Drawing.Color.Black;
             this.label3.Location = new System.Drawing.Point(267, 236);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(75, 37);
@@ -110,6 +115,7 @@ namespace Asrfly.Gui.GuiCategories
             // label4
             // 
             this.label4.AutoSize = true;
+            this.label4.ForeColor = System.Drawing.Color.Black;
             this.label4.Location = new System.Drawing.Point(271, 448);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(71, 37);
@@ -119,6 +125,7 @@ namespace Asrfly.Gui.GuiCategories
             // textBoxBalance
             // 
             this.textBoxBalance.Enabled = false;
+            this.textBoxBalance.ForeColor = System.Drawing.Color.Black;
             this.textBoxBalance.Location = new System.Drawing.Point(68, 488);
             this.textBoxBalance.Name = "textBoxBalance";
             this.textBoxBalance.Size = new System.Drawing.Size(459, 45);
@@ -128,6 +135,7 @@ namespace Asrfly.Gui.GuiCategories
             // comboBoxCategoryType
             // 
             this.comboBoxCategoryType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxCategoryType.ForeColor = System.Drawing.Color.Black;
             this.comboBoxCategoryType.FormattingEnabled = true;
             this.comboBoxCategoryType.Items.AddRange(new object[] {
             "صرف",
@@ -139,6 +147,7 @@ namespace Asrfly.Gui.GuiCategories
             // 
             // richTextBoxCategoryDetails
             // 
+            this.richTextBoxCategoryDetails.ForeColor = System.Drawing.Color.Black;
             this.richTextBoxCategoryDetails.Location = new System.Drawing.Point(68, 278);
             this.richTextBoxCategoryDetails.Name = "richTextBoxCategoryDetails";
             this.richTextBoxCategoryDetails.Size = new System.Drawing.Size(459, 146);
