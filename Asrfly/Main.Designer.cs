@@ -88,6 +88,7 @@ namespace Asrfly
             this.buttonCategory.TabIndex = 1;
             this.buttonCategory.Text = "الاصناف";
             this.buttonCategory.UseVisualStyleBackColor = true;
+            this.buttonCategory.Click += new System.EventHandler(this.buttonCategory_Click);
             // 
             // buttonCustomers
             // 

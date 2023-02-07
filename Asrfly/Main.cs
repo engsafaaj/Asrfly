@@ -30,5 +30,10 @@ namespace Asrfly
             pageManager.LoadPage(Gui.GuiHome.HomeUserControl.Instance());
         }
         #endregion
+
+        private void buttonCategory_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
