@@ -10,6 +10,11 @@ namespace Asrfly.Gui.GuiCategories
 {
     public partial class CategoryUserControl : UserControl
     {
+        // Variables
+        private static CategoryUserControl _CategoryUserControl;
+
+
+        // Constructors
         public CategoryUserControl()
         {
             InitializeComponent();
@@ -17,7 +22,7 @@ namespace Asrfly.Gui.GuiCategories
         #region Events
         private void buttonAdd_Click(object sender, EventArgs e)
         {
-
+          
         }
 
         private void buttonEdit_Click(object sender, EventArgs e)
@@ -27,7 +32,6 @@ namespace Asrfly.Gui.GuiCategories
 
         private void buttonDelete_Click(object sender, EventArgs e)
         {
-
         }
 
         private void buttonExport_Click(object sender, EventArgs e)
@@ -50,5 +54,9 @@ namespace Asrfly.Gui.GuiCategories
 
         }
         #endregion
+
+       
+
     }
 }
+
