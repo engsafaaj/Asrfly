@@ -61,6 +61,24 @@ namespace Asrfly.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to لا يوجد بيانات.
+        /// </summary>
+        internal static string EmptyDataCaption {
+            get {
+                return ResourceManager.GetString("EmptyDataCaption", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to لا يوجد بيانات معروضة لاتمام العملية.
+        /// </summary>
+        internal static string EmptyDataText {
+            get {
+                return ResourceManager.GetString("EmptyDataText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap icons8_about_32px_1 {
@@ -186,6 +204,26 @@ namespace Asrfly.Properties {
         internal static System.Drawing.Bitmap icons8_people_32px {
             get {
                 object obj = ResourceManager.GetObject("icons8_people_32px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_save_32px {
+            get {
+                object obj = ResourceManager.GetObject("icons8_save_32px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_save_32px_1 {
+            get {
+                object obj = ResourceManager.GetObject("icons8_save_32px_1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
