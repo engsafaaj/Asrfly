@@ -22,8 +22,7 @@ namespace Asrfly.Gui.GuiCategories
         #region Events
         private void buttonAdd_Click(object sender, EventArgs e)
         {
-            AddCategoryForm addCategoryForm = new AddCategoryForm();
-            addCategoryForm.Show();
+          
         }
 
         private void buttonEdit_Click(object sender, EventArgs e)
@@ -33,7 +32,6 @@ namespace Asrfly.Gui.GuiCategories
 
         private void buttonDelete_Click(object sender, EventArgs e)
         {
-            Code.MessageCollections.ShowEmptyMessage();
         }
 
         private void buttonExport_Click(object sender, EventArgs e)
@@ -57,12 +55,7 @@ namespace Asrfly.Gui.GuiCategories
         }
         #endregion
 
-        #region Methods
-        public static CategoryUserControl Instance()
-        {
-            return _CategoryUserControl ?? (new CategoryUserControl());
-        }
-        #endregion
+       
 
     }
 }
