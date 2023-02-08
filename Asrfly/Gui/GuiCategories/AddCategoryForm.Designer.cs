@@ -30,17 +30,17 @@ namespace Asrfly.Gui.GuiCategories
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.textBoxName = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.comboBoxType = new System.Windows.Forms.ComboBox();
-            this.richTextBoxDetails = new System.Windows.Forms.RichTextBox();
-            this.textBoxBalance = new System.Windows.Forms.TextBox();
-            this.buttonSaveAndClose = new System.Windows.Forms.Button();
             this.buttonSave = new System.Windows.Forms.Button();
+            this.buttonSaveAndClose = new System.Windows.Forms.Button();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.richTextBoxDetails = new System.Windows.Forms.RichTextBox();
+            this.comboBoxType = new System.Windows.Forms.ComboBox();
+            this.textBoxBalance = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.textBoxName = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -54,6 +54,32 @@ namespace Asrfly.Gui.GuiCategories
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(580, 76);
             this.panel1.TabIndex = 0;
+            // 
+            // buttonSave
+            // 
+            this.buttonSave.Image = global::Asrfly.Properties.Resources.icons8_save_32px_1;
+            this.buttonSave.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonSave.Location = new System.Drawing.Point(12, 16);
+            this.buttonSave.Margin = new System.Windows.Forms.Padding(5);
+            this.buttonSave.Name = "buttonSave";
+            this.buttonSave.Size = new System.Drawing.Size(139, 55);
+            this.buttonSave.TabIndex = 2;
+            this.buttonSave.Text = "حفظ ";
+            this.buttonSave.UseVisualStyleBackColor = true;
+            this.buttonSave.Click += new System.EventHandler(this.buttonSave_Click);
+            // 
+            // buttonSaveAndClose
+            // 
+            this.buttonSaveAndClose.Image = global::Asrfly.Properties.Resources.icons8_save_32px;
+            this.buttonSaveAndClose.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonSaveAndClose.Location = new System.Drawing.Point(353, 7);
+            this.buttonSaveAndClose.Margin = new System.Windows.Forms.Padding(5);
+            this.buttonSaveAndClose.Name = "buttonSaveAndClose";
+            this.buttonSaveAndClose.Size = new System.Drawing.Size(213, 55);
+            this.buttonSaveAndClose.TabIndex = 2;
+            this.buttonSaveAndClose.Text = "حفظ وغلق";
+            this.buttonSaveAndClose.UseVisualStyleBackColor = true;
+            this.buttonSaveAndClose.Click += new System.EventHandler(this.buttonSaveAndClose_Click);
             // 
             // groupBox1
             // 
@@ -72,49 +98,13 @@ namespace Asrfly.Gui.GuiCategories
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "معلومات الصنف";
             // 
-            // label1
+            // richTextBoxDetails
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(238, 45);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(111, 37);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "اسم الصنف";
-            // 
-            // textBoxName
-            // 
-            this.textBoxName.Location = new System.Drawing.Point(15, 85);
-            this.textBoxName.Name = "textBoxName";
-            this.textBoxName.Size = new System.Drawing.Size(518, 45);
-            this.textBoxName.TabIndex = 1;
-            this.textBoxName.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(238, 130);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(104, 37);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "نوع الصنف";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(244, 220);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(90, 37);
-            this.label3.TabIndex = 0;
-            this.label3.Text = "التفاصيل";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(244, 399);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(71, 37);
-            this.label4.TabIndex = 0;
-            this.label4.Text = "الرصيد";
+            this.richTextBoxDetails.Location = new System.Drawing.Point(21, 270);
+            this.richTextBoxDetails.Name = "richTextBoxDetails";
+            this.richTextBoxDetails.Size = new System.Drawing.Size(512, 120);
+            this.richTextBoxDetails.TabIndex = 3;
+            this.richTextBoxDetails.Text = "";
             // 
             // comboBoxType
             // 
@@ -128,14 +118,6 @@ namespace Asrfly.Gui.GuiCategories
             this.comboBoxType.Size = new System.Drawing.Size(518, 45);
             this.comboBoxType.TabIndex = 2;
             // 
-            // richTextBoxDetails
-            // 
-            this.richTextBoxDetails.Location = new System.Drawing.Point(21, 270);
-            this.richTextBoxDetails.Name = "richTextBoxDetails";
-            this.richTextBoxDetails.Size = new System.Drawing.Size(512, 120);
-            this.richTextBoxDetails.TabIndex = 3;
-            this.richTextBoxDetails.Text = "";
-            // 
             // textBoxBalance
             // 
             this.textBoxBalance.Enabled = false;
@@ -145,31 +127,49 @@ namespace Asrfly.Gui.GuiCategories
             this.textBoxBalance.TabIndex = 1;
             this.textBoxBalance.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
-            // buttonSaveAndClose
+            // label4
             // 
-            this.buttonSaveAndClose.Image = global::Asrfly.Properties.Resources.icons8_save_32px;
-            this.buttonSaveAndClose.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonSaveAndClose.Location = new System.Drawing.Point(353, 7);
-            this.buttonSaveAndClose.Margin = new System.Windows.Forms.Padding(5);
-            this.buttonSaveAndClose.Name = "buttonSaveAndClose";
-            this.buttonSaveAndClose.Size = new System.Drawing.Size(213, 55);
-            this.buttonSaveAndClose.TabIndex = 2;
-            this.buttonSaveAndClose.Text = "حفظ وغلق";
-            this.buttonSaveAndClose.UseVisualStyleBackColor = true;
-            this.buttonSaveAndClose.Click += new System.EventHandler(this.buttonSaveAndClose_Click);
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(244, 399);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(71, 37);
+            this.label4.TabIndex = 0;
+            this.label4.Text = "الرصيد";
             // 
-            // buttonSave
+            // label3
             // 
-            this.buttonSave.Image = global::Asrfly.Properties.Resources.icons8_save_32px_1;
-            this.buttonSave.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonSave.Location = new System.Drawing.Point(12, 16);
-            this.buttonSave.Margin = new System.Windows.Forms.Padding(5);
-            this.buttonSave.Name = "buttonSave";
-            this.buttonSave.Size = new System.Drawing.Size(139, 55);
-            this.buttonSave.TabIndex = 2;
-            this.buttonSave.Text = "حفظ ";
-            this.buttonSave.UseVisualStyleBackColor = true;
-            this.buttonSave.Click += new System.EventHandler(this.buttonSave_Click);
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(244, 220);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(90, 37);
+            this.label3.TabIndex = 0;
+            this.label3.Text = "التفاصيل";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(238, 130);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(104, 37);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "نوع الصنف";
+            // 
+            // textBoxName
+            // 
+            this.textBoxName.Location = new System.Drawing.Point(15, 85);
+            this.textBoxName.Name = "textBoxName";
+            this.textBoxName.Size = new System.Drawing.Size(518, 45);
+            this.textBoxName.TabIndex = 1;
+            this.textBoxName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(238, 45);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(111, 37);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "اسم الصنف";
             // 
             // AddCategoryForm
             // 
