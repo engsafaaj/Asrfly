@@ -1,0 +1,10 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="Asrfly.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="SqlServerConString" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Server=.\SQLEXPRESS;Database=AsrflyDataBase;Trusted_Connection=True;
+</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

@@ -19,4 +19,8 @@
     </PackageReference>
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Asrfly.Core\Asrfly.Core.csproj" />
+  </ItemGroup>
+
 </Project>
