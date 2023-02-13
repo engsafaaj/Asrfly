@@ -13,4 +13,10 @@
     <PackageReference Include="coverlet.collector" Version="3.0.2" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Asrfly.Core\Asrfly.Core.csproj" />
+    <ProjectReference Include="..\Asrfly.Data\Asrfly.Data.csproj" />
+    <ProjectReference Include="..\Asrfly\Asrfly.csproj" />
+  </ItemGroup>
+
 </Project>

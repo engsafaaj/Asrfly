@@ -1,4 +1,5 @@
 ﻿using Asrfly.Core;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -7,10 +8,10 @@ namespace Asrfly.Data.SqlServer
 {
     public class CategoriesEntity : IDataHelper<Categories>
     {
+
         // Variables
         private DBContext db;
         private Categories table;
-
         // Constructors
         public CategoriesEntity()
         {
@@ -234,7 +235,7 @@ namespace Asrfly.Data.SqlServer
                     || x.Name.Contains(SearchItem)
                     || x.Details.Contains(SearchItem)
                     || x.Balance.ToString().Contains(SearchItem)
-                    || x.AddedDate.ToShortDateString().Contains(SearchItem)
+                    || x.AddedDate.Date.ToString().Contains(SearchItem)
                     )
                         .ToList();
                 }
@@ -259,7 +260,7 @@ namespace Asrfly.Data.SqlServer
                       || x.Name.Contains(SearchItem)
                       || x.Details.Contains(SearchItem)
                       || x.Balance.ToString().Contains(SearchItem)
-                      || x.AddedDate.ToShortDateString().Contains(SearchItem)
+                      || x.AddedDate.Date.ToString().Contains(SearchItem)
                     )
                         .ToList());
                 }
