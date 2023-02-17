@@ -281,10 +281,38 @@ namespace Asrfly.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Loading_2 {
+            get {
+                object obj = ResourceManager.GetObject("Loading_2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Logo_2021 {
             get {
                 object obj = ResourceManager.GetObject("Logo_2021", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to خطا اتصال في السيرفر.
+        /// </summary>
+        internal static string ServerErrorCaption {
+            get {
+                return ResourceManager.GetString("ServerErrorCaption", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to يبدو ان لديك خطا في الاتصال في السيرفر . حاول مجددا او اعد ضبط الاتصال من اعدادات النظام.
+        /// </summary>
+        internal static string ServerErrorText {
+            get {
+                return ResourceManager.GetString("ServerErrorText", resourceCulture);
             }
         }
     }

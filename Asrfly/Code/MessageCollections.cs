@@ -13,6 +13,11 @@ namespace Asrfly.Code
             MessageBox.Show(Resources.EmptyMessageText, Resources.EmptyMessageCaption,
                 MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
+        public static void ShowErrorServer()
+        {
+            MessageBox.Show(Resources.ServerErrorText, Resources.ServerErrorCaption,
+                MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
         // Dialog
     }
 }

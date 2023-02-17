@@ -1,3 +1,4 @@
+using Asrfly.Code;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,6 +18,7 @@ namespace Asrfly
             Application.SetHighDpiMode(HighDpiMode.SystemAware);
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+            DependnecyInjection.AddDependencyValues();
             Application.Run(new Main());
         }
     }
