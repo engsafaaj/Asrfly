@@ -16,8 +16,9 @@ namespace Asrfly.Gui.GuiCategories
         // Variables
         private readonly IDataHelper<Categories> dataHelper;
         private static CategoryUserControl _CategoryUserControl;
+        private int RowId;
         private readonly GuiLoading.LoadingForm loadingForm;
-
+        private List<int> IdList = new List<int>();
 
         // Constructors
         public CategoryUserControl()
@@ -30,18 +31,59 @@ namespace Asrfly.Gui.GuiCategories
         #region Events
         private void buttonAdd_Click(object sender, EventArgs e)
         {
-            AddCategoryForm addCategoryForm = new AddCategoryForm();
+            AddCategoryForm addCategoryForm = new AddCategoryForm(0, this);
             addCategoryForm.Show();
         }
 
         private void buttonEdit_Click(object sender, EventArgs e)
         {
-            Code.MessageCollections.ShowEmptyDataMessage();
+            Edit();
         }
 
-        private void buttonDelete_Click(object sender, EventArgs e)
+        private async void buttonDelete_Click(object sender, EventArgs e)
         {
+            if (dataGridView1.RowCount > 0)
+            {
+                var Deleteresult = MessageCollections.ShowDeleteDialog();
+                if (Deleteresult)
+                {
+                    SetIdRowForDelete();
+                    loadingForm.Show();
+                    if (IdList.Count > 0)
+                    {
+                        for (int i = 0; i < IdList.Count; i++)
+                        {
+                            RowId = IdList[i];
+                            var result = await dataHelper.DeleteAsync(RowId);
+                            if (result == 1)
+                            {
+                                MessageCollections.ShowDeleteNotificaiton();
+                            }
+                            else
+                            {
+                                MessageCollections.ShowErrorServer();
+
+                            }
+                            LoadData();
+                        }
+                    }
+                    else
+                    {
+                        MessageCollections.ShowRequiredDeleteRow();
+                    }
+                   
+                    loadingForm.Hide();
+                }
+
+            }
+            else
+            {
+                MessageCollections.ShowEmptyDataMessage();
+            }
+
         }
+
+
 
         private void buttonExport_Click(object sender, EventArgs e)
         {
@@ -52,6 +94,10 @@ namespace Asrfly.Gui.GuiCategories
         {
 
         }
+        private void buttonUpdate_Click(object sender, EventArgs e)
+        {
+            LoadData();
+        }
 
         private void textBoxSearch_TextChanged(object sender, EventArgs e)
         {
@@ -60,7 +106,7 @@ namespace Asrfly.Gui.GuiCategories
 
         private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-
+            Edit();
         }
         #endregion
 
@@ -72,7 +118,7 @@ namespace Asrfly.Gui.GuiCategories
         public async void LoadData()
         {
             loadingForm.Show();
-            dataGridView1.DataSource =await dataHelper.GetAllDataAsync();
+            dataGridView1.DataSource = await dataHelper.GetAllDataAsync();
             if (dataGridView1.DataSource == null)
             {
                 MessageCollections.ShowErrorServer();
@@ -81,7 +127,7 @@ namespace Asrfly.Gui.GuiCategories
             {
                 SetColumnsTitle();
             }
-            loadingForm.Close();
+            loadingForm.Hide();
         }
         private void SetColumnsTitle()
         {
@@ -92,7 +138,33 @@ namespace Asrfly.Gui.GuiCategories
             dataGridView1.Columns[4].HeaderText = "الرصيد";
             dataGridView1.Columns[5].HeaderText = "تاريخ الاضافة";
         }
+        private void Edit()
+        {
+            if (dataGridView1.RowCount > 0)
+            {
+                // Get Id
+                RowId = Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value);
+                AddCategoryForm addCategoryForm = new AddCategoryForm(RowId, this);
+                addCategoryForm.Show();
+            }
+            else
+            {
+                MessageCollections.ShowEmptyDataMessage();
+            }
+        }
+        private void SetIdRowForDelete()
+        {
+            foreach (DataGridViewRow row in dataGridView1.Rows)
+            {
+                if (row.Selected)
+                {
+                    IdList.Add(Convert.ToInt32(row.Cells[0].Value));
+                }
+            }
+        }
         #endregion
+
+
     }
 }
 

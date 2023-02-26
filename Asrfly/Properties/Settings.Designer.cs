@@ -34,5 +34,17 @@ namespace Asrfly.Properties {
                 this["SqlServerConString"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("2000")]
+        public int HideNotificaitonInterval {
+            get {
+                return ((int)(this["HideNotificaitonInterval"]));
+            }
+            set {
+                this["HideNotificaitonInterval"] = value;
+            }
+        }
     }
 }

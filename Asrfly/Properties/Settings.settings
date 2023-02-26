@@ -6,5 +6,8 @@
       <Value Profile="(Default)">Server=.\SQLEXPRESS;Database=AsrflyDataBase;Trusted_Connection=True;
 </Value>
     </Setting>
+    <Setting Name="HideNotificaitonInterval" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">2000</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

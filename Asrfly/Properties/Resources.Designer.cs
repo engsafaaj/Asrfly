@@ -61,6 +61,24 @@ namespace Asrfly.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to اجراء حذف.
+        /// </summary>
+        internal static string DeleteDialogCaption {
+            get {
+                return ResourceManager.GetString("DeleteDialogCaption", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to هل انت متأكد من هذا الاجراء . لا يمكن استرجاء البيانات.
+        /// </summary>
+        internal static string DeleteDialogText {
+            get {
+                return ResourceManager.GetString("DeleteDialogText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to لا يوجد بيانات.
         /// </summary>
         internal static string EmptyMessageCaption {
@@ -75,6 +93,24 @@ namespace Asrfly.Properties {
         internal static string EmptyMessageText {
             get {
                 return ResourceManager.GetString("EmptyMessageText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to خطا ادخال.
+        /// </summary>
+        internal static string FiledReqCaption {
+            get {
+                return ResourceManager.GetString("FiledReqCaption", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to جميع الحقوق التي تحتوي على علامة * هي حقول مطلوبة. اعد ادخالها ثم حاول مره اخرى.
+        /// </summary>
+        internal static string FiledsReqText {
+            get {
+                return ResourceManager.GetString("FiledsReqText", resourceCulture);
             }
         }
         
@@ -191,6 +227,26 @@ namespace Asrfly.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_Notification_128px {
+            get {
+                object obj = ResourceManager.GetObject("icons8_Notification_128px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_notification_80px {
+            get {
+                object obj = ResourceManager.GetObject("icons8_notification_80px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_output_32px {
             get {
                 object obj = ResourceManager.GetObject("icons8_output_32px", resourceCulture);
@@ -261,6 +317,16 @@ namespace Asrfly.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_update_32px {
+            get {
+                object obj = ResourceManager.GetObject("icons8_update_32px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_users_32px {
             get {
                 object obj = ResourceManager.GetObject("icons8_users_32px", resourceCulture);
@@ -313,6 +379,24 @@ namespace Asrfly.Properties {
         internal static string ServerErrorText {
             get {
                 return ResourceManager.GetString("ServerErrorText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to اجراء حذف.
+        /// </summary>
+        internal static string ShowReDeleteFiledCaption {
+            get {
+                return ResourceManager.GetString("ShowReDeleteFiledCaption", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to لحساسية اجراء الحذف لابد لك من تحديد كامل السطر .
+        /// </summary>
+        internal static string ShowReDeleteFiledText {
+            get {
+                return ResourceManager.GetString("ShowReDeleteFiledText", resourceCulture);
             }
         }
     }

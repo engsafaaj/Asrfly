@@ -32,15 +32,19 @@ namespace Asrfly.Gui.GuiCategories
             this.panel1 = new System.Windows.Forms.Panel();
             this.buttonSave = new System.Windows.Forms.Button();
             this.buttonSaveAndClose = new System.Windows.Forms.Button();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.richTextBoxDetails = new System.Windows.Forms.RichTextBox();
-            this.comboBoxType = new System.Windows.Forms.ComboBox();
-            this.textBoxBalance = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.textBoxName = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.textBoxName = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.textBoxBalance = new System.Windows.Forms.TextBox();
+            this.comboBoxType = new System.Windows.Forms.ComboBox();
+            this.richTextBoxDetails = new System.Windows.Forms.RichTextBox();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -81,30 +85,77 @@ namespace Asrfly.Gui.GuiCategories
             this.buttonSaveAndClose.UseVisualStyleBackColor = true;
             this.buttonSaveAndClose.Click += new System.EventHandler(this.buttonSaveAndClose_Click);
             // 
-            // groupBox1
+            // label1
             // 
-            this.groupBox1.Controls.Add(this.richTextBoxDetails);
-            this.groupBox1.Controls.Add(this.comboBoxType);
-            this.groupBox1.Controls.Add(this.textBoxBalance);
-            this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.textBoxName);
-            this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Location = new System.Drawing.Point(12, 12);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(556, 503);
-            this.groupBox1.TabIndex = 1;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "معلومات الصنف";
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(238, 45);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(111, 37);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "اسم الصنف";
             // 
-            // richTextBoxDetails
+            // label5
             // 
-            this.richTextBoxDetails.Location = new System.Drawing.Point(21, 270);
-            this.richTextBoxDetails.Name = "richTextBoxDetails";
-            this.richTextBoxDetails.Size = new System.Drawing.Size(512, 120);
-            this.richTextBoxDetails.TabIndex = 3;
-            this.richTextBoxDetails.Text = "";
+            this.label5.AutoSize = true;
+            this.label5.ForeColor = System.Drawing.Color.Red;
+            this.label5.Location = new System.Drawing.Point(207, 45);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(0, 37);
+            this.label5.TabIndex = 0;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.ForeColor = System.Drawing.Color.Red;
+            this.label6.Location = new System.Drawing.Point(207, 130);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(0, 37);
+            this.label6.TabIndex = 0;
+            // 
+            // textBoxName
+            // 
+            this.textBoxName.Location = new System.Drawing.Point(15, 85);
+            this.textBoxName.Name = "textBoxName";
+            this.textBoxName.Size = new System.Drawing.Size(518, 45);
+            this.textBoxName.TabIndex = 1;
+            this.textBoxName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(238, 130);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(104, 37);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "نوع الصنف";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(244, 220);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(90, 37);
+            this.label3.TabIndex = 0;
+            this.label3.Text = "التفاصيل";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(244, 399);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(71, 37);
+            this.label4.TabIndex = 0;
+            this.label4.Text = "الرصيد";
+            // 
+            // textBoxBalance
+            // 
+            this.textBoxBalance.Enabled = false;
+            this.textBoxBalance.Location = new System.Drawing.Point(21, 452);
+            this.textBoxBalance.Name = "textBoxBalance";
+            this.textBoxBalance.Size = new System.Drawing.Size(518, 45);
+            this.textBoxBalance.TabIndex = 1;
+            this.textBoxBalance.Text = "0";
+            this.textBoxBalance.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // comboBoxType
             // 
@@ -118,58 +169,54 @@ namespace Asrfly.Gui.GuiCategories
             this.comboBoxType.Size = new System.Drawing.Size(518, 45);
             this.comboBoxType.TabIndex = 2;
             // 
-            // textBoxBalance
+            // richTextBoxDetails
             // 
-            this.textBoxBalance.Enabled = false;
-            this.textBoxBalance.Location = new System.Drawing.Point(21, 439);
-            this.textBoxBalance.Name = "textBoxBalance";
-            this.textBoxBalance.Size = new System.Drawing.Size(518, 45);
-            this.textBoxBalance.TabIndex = 1;
-            this.textBoxBalance.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.richTextBoxDetails.Location = new System.Drawing.Point(21, 270);
+            this.richTextBoxDetails.Name = "richTextBoxDetails";
+            this.richTextBoxDetails.Size = new System.Drawing.Size(512, 120);
+            this.richTextBoxDetails.TabIndex = 3;
+            this.richTextBoxDetails.Text = "";
             // 
-            // label4
+            // groupBox1
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(244, 399);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(71, 37);
-            this.label4.TabIndex = 0;
-            this.label4.Text = "الرصيد";
+            this.groupBox1.Controls.Add(this.richTextBoxDetails);
+            this.groupBox1.Controls.Add(this.comboBoxType);
+            this.groupBox1.Controls.Add(this.textBoxBalance);
+            this.groupBox1.Controls.Add(this.label4);
+            this.groupBox1.Controls.Add(this.label3);
+            this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Controls.Add(this.textBoxName);
+            this.groupBox1.Controls.Add(this.label6);
+            this.groupBox1.Controls.Add(this.label5);
+            this.groupBox1.Controls.Add(this.label8);
+            this.groupBox1.Controls.Add(this.label7);
+            this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Location = new System.Drawing.Point(12, 12);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(556, 503);
+            this.groupBox1.TabIndex = 1;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "معلومات الصنف";
             // 
-            // label3
+            // label8
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(244, 220);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(90, 37);
-            this.label3.TabIndex = 0;
-            this.label3.Text = "التفاصيل";
+            this.label8.AutoSize = true;
+            this.label8.ForeColor = System.Drawing.Color.Red;
+            this.label8.Location = new System.Drawing.Point(213, 133);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(25, 37);
+            this.label8.TabIndex = 0;
+            this.label8.Text = "*";
             // 
-            // label2
+            // label7
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(238, 130);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(104, 37);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "نوع الصنف";
-            // 
-            // textBoxName
-            // 
-            this.textBoxName.Location = new System.Drawing.Point(15, 85);
-            this.textBoxName.Name = "textBoxName";
-            this.textBoxName.Size = new System.Drawing.Size(518, 45);
-            this.textBoxName.TabIndex = 1;
-            this.textBoxName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(238, 45);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(111, 37);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "اسم الصنف";
+            this.label7.AutoSize = true;
+            this.label7.ForeColor = System.Drawing.Color.Red;
+            this.label7.Location = new System.Drawing.Point(213, 41);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(25, 37);
+            this.label7.TabIndex = 0;
+            this.label7.Text = "*";
             // 
             // AddCategoryForm
             // 
@@ -191,6 +238,7 @@ namespace Asrfly.Gui.GuiCategories
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "اضافة / تعديل صنف";
             this.TopMost = true;
+            this.Load += new System.EventHandler(this.AddCategoryForm_Load);
             this.panel1.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -201,16 +249,20 @@ namespace Asrfly.Gui.GuiCategories
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.RichTextBox richTextBoxDetails;
-        private System.Windows.Forms.ComboBox comboBoxType;
-        private System.Windows.Forms.TextBox textBoxBalance;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBoxName;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button buttonSave;
         private System.Windows.Forms.Button buttonSaveAndClose;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox textBoxName;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox textBoxBalance;
+        private System.Windows.Forms.ComboBox comboBoxType;
+        private System.Windows.Forms.RichTextBox richTextBoxDetails;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label7;
     }
 }
