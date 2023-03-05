@@ -9,5 +9,11 @@
     <Setting Name="HideNotificaitonInterval" Type="System.Int32" Scope="User">
       <Value Profile="(Default)">2000</Value>
     </Setting>
+    <Setting Name="UserName" Type="System.String" Scope="User">
+      <Value Profile="(Default)">صفاء جاسم</Value>
+    </Setting>
+    <Setting Name="DataGridViewRowNo" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">3</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

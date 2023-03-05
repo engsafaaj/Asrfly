@@ -20,11 +20,14 @@ namespace Asrfly.Gui.GuiCategories
         private Categories categories;
         private readonly IDataHelper<Categories> dataHelper;
         private readonly GuiLoading.LoadingForm loadingForm;
+        private readonly IDataHelper<SystemRecords> dataHelperSystemRecords;
 
         public AddCategoryForm(int Id, CategoryUserControl ctegoryUserControl)
         {
             InitializeComponent();
             dataHelper = (IDataHelper<Categories>)ConfigrationObjectManager.GetObject("Categories");
+            dataHelperSystemRecords = (IDataHelper<SystemRecords>)ConfigrationObjectManager.GetObject("SystemRecords");
+
             loadingForm = new GuiLoading.LoadingForm();
             this.ID = Id;
             this.categoryUserControl = ctegoryUserControl;
@@ -139,6 +142,15 @@ namespace Asrfly.Gui.GuiCategories
             var result = await dataHelper.AddAsync(categories);
             if (result == 1)
             {
+                // Save System Records
+                SystemRecords systemRecords = new SystemRecords
+                {
+                    Title = " اضافة صنف",
+                    UserName = Properties.Settings.Default.UserName,
+                    Details = "تمت اضافة صنف  "+categories.Name,
+                    AddedDate = DateTime.Now
+                };
+                await dataHelperSystemRecords.AddAsync(systemRecords);
                 categoryUserControl.LoadData();
                 return true;
             }
@@ -163,6 +175,15 @@ namespace Asrfly.Gui.GuiCategories
             var result = await dataHelper.EditAsync(categories);
             if (result == 1)
             {
+                // Save System Records
+                SystemRecords systemRecords = new SystemRecords
+                {
+                    Title = " تعديل صنف",
+                    UserName = Properties.Settings.Default.UserName,
+                    Details = "تم تعديل صنف  " + categories.Name,
+                    AddedDate = DateTime.Now
+                };
+                await dataHelperSystemRecords.AddAsync(systemRecords);
                 // Toast 
                 categoryUserControl.LoadData();
                 return true;

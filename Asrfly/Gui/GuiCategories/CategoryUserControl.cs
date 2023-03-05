@@ -11,6 +11,7 @@ using System.Drawing;
 using System.IO;
 using System.Text;
 using System.Windows.Forms;
+using System.Linq;
 
 namespace Asrfly.Gui.GuiCategories
 {
@@ -18,17 +19,18 @@ namespace Asrfly.Gui.GuiCategories
     {
         // Variables
         private readonly IDataHelper<Categories> dataHelper;
+        private readonly IDataHelper<SystemRecords> dataHelperSystemRecords;
         private static CategoryUserControl _CategoryUserControl;
         private int RowId;
         private readonly GuiLoading.LoadingForm loadingForm;
         private List<int> IdList = new List<int>();
         private string SearchItem;
-        DataTable dataTable;
         // Constructors
         public CategoryUserControl()
         {
             InitializeComponent();
             dataHelper = (IDataHelper<Categories>)ConfigrationObjectManager.GetObject("Categories");
+            dataHelperSystemRecords = (IDataHelper<SystemRecords>)ConfigrationObjectManager.GetObject("SystemRecords");
             loadingForm = new GuiLoading.LoadingForm();
             LoadData();
         }
@@ -62,6 +64,17 @@ namespace Asrfly.Gui.GuiCategories
                             var result = await dataHelper.DeleteAsync(RowId);
                             if (result == 1)
                             {
+                                // Save System Records
+                                SystemRecords systemRecords = new SystemRecords
+                                {
+                                    Title="عملية حذف",
+                                    UserName=Properties.Settings.Default.UserName,
+                                    Details="تم حذف صنف ذي الرقم التعريفي "+RowId.ToString(),
+                                    AddedDate=DateTime.Now
+                                };
+                                await dataHelperSystemRecords.AddAsync(systemRecords);
+
+                                // 
                                 MessageCollections.ShowDeleteNotificaiton();
                             }
                             else
@@ -136,7 +149,19 @@ namespace Asrfly.Gui.GuiCategories
         public async void LoadData()
         {
             loadingForm.Show();
-            dataGridView1.DataSource = await dataHelper.GetAllDataAsync();
+            var data = await dataHelper.GetAllDataAsync();
+            dataGridView1.DataSource = data.Take(Properties.Settings.Default.DataGridViewRowNo).ToList();
+            
+            // Add No of Page into Combo Box
+            comboBoxPageNo.Items.Clear();
+            int NoOfPage =Convert.ToInt32((data.Count / Properties.Settings.Default.DataGridViewRowNo));
+
+            for(int i = 0; i < NoOfPage; i++)
+            {
+                comboBoxPageNo.Items.Add(i);
+            }
+            //
+
             if (dataGridView1.DataSource == null)
             {
                 MessageCollections.ShowErrorServer();
@@ -146,6 +171,7 @@ namespace Asrfly.Gui.GuiCategories
                 SetColumnsTitle();
             }
             loadingForm.Hide();
+            data.Clear();
         }
 
         private void SetColumnsTitle()
@@ -249,9 +275,30 @@ namespace Asrfly.Gui.GuiCategories
 
         }
 
+
         #endregion
 
-       
+        private async void comboBoxPageNo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            loadingForm.Show();
+            var data = await dataHelper.GetAllDataAsync();
+            var dataId = data.Select(x => x.Id).ToArray();
+            int index = comboBoxPageNo.SelectedIndex;
+            int IndexNoOfRow = index * Properties.Settings.Default.DataGridViewRowNo;
+
+            dataGridView1.DataSource = data.Where(x=>x.Id>= dataId[IndexNoOfRow]).Take(Properties.Settings.Default.DataGridViewRowNo).ToList();
+            if (dataGridView1.DataSource == null)
+            {
+                MessageCollections.ShowErrorServer();
+            }
+            else
+            {
+                SetColumnsTitle();
+            }
+            loadingForm.Hide();
+            data.Clear();
+           
+        }
     }
 }
 

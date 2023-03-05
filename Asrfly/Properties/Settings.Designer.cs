@@ -46,5 +46,29 @@ namespace Asrfly.Properties {
                 this["HideNotificaitonInterval"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("صفاء جاسم")]
+        public string UserName {
+            get {
+                return ((string)(this["UserName"]));
+            }
+            set {
+                this["UserName"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("3")]
+        public int DataGridViewRowNo {
+            get {
+                return ((int)(this["DataGridViewRowNo"]));
+            }
+            set {
+                this["DataGridViewRowNo"] = value;
+            }
+        }
     }
 }
