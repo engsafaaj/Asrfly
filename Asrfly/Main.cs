@@ -35,5 +35,11 @@ namespace Asrfly
             pageManager.LoadPage(Gui.GuiCategories.CategoryUserControl.Instance());
         }
         #endregion
+
+        private void buttonCustomers_Click(object sender, EventArgs e)
+        {
+            // Load Customers Page
+            pageManager.LoadPage(Gui.GuiCustomers.CustomersUserControl.Instance());
+        }
     }
 }

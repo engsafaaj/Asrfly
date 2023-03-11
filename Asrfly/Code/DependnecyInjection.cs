@@ -11,6 +11,7 @@ namespace Asrfly.Code
         {
             ConfigrationObjectManager.Register("Categories", new CategoriesEntity());
             ConfigrationObjectManager.Register("SystemRecords", new SystemRecordsEntity());
+            ConfigrationObjectManager.Register("Customers", new CustomersEntity ());
         }
     }
 }

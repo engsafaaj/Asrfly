@@ -101,6 +101,7 @@ namespace Asrfly
             this.buttonCustomers.TabIndex = 2;
             this.buttonCustomers.Text = "العملاء";
             this.buttonCustomers.UseVisualStyleBackColor = true;
+            this.buttonCustomers.Click += new System.EventHandler(this.buttonCustomers_Click);
             // 
             // buttonSuppliers
             // 
