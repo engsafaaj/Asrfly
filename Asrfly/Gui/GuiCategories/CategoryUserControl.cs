@@ -67,10 +67,10 @@ namespace Asrfly.Gui.GuiCategories
                                 // Save System Records
                                 SystemRecords systemRecords = new SystemRecords
                                 {
-                                    Title="عملية حذف",
-                                    UserName=Properties.Settings.Default.UserName,
-                                    Details="تم حذف صنف ذي الرقم التعريفي "+RowId.ToString(),
-                                    AddedDate=DateTime.Now
+                                    Title = "عملية حذف",
+                                    UserName = Properties.Settings.Default.UserName,
+                                    Details = "تم حذف صنف ذي الرقم التعريفي " + RowId.ToString(),
+                                    AddedDate = DateTime.Now
                                 };
                                 await dataHelperSystemRecords.AddAsync(systemRecords);
 
@@ -151,12 +151,13 @@ namespace Asrfly.Gui.GuiCategories
             loadingForm.Show();
             var data = await dataHelper.GetAllDataAsync();
             dataGridView1.DataSource = data.Take(Properties.Settings.Default.DataGridViewRowNo).ToList();
-            
+
             // Add No of Page into Combo Box
             comboBoxPageNo.Items.Clear();
-            int NoOfPage =Convert.ToInt32((data.Count / Properties.Settings.Default.DataGridViewRowNo));
+            double value = (Convert.ToDouble(data.Count) / Convert.ToDouble(Properties.Settings.Default.DataGridViewRowNo));
+            int NoOfPage =(int) Math.Round(value,MidpointRounding.AwayFromZero) ;
 
-            for(int i = 0; i < NoOfPage; i++)
+            for (int i = 0; i < NoOfPage; i++)
             {
                 comboBoxPageNo.Items.Add(i);
             }
@@ -286,7 +287,7 @@ namespace Asrfly.Gui.GuiCategories
             int index = comboBoxPageNo.SelectedIndex;
             int IndexNoOfRow = index * Properties.Settings.Default.DataGridViewRowNo;
 
-            dataGridView1.DataSource = data.Where(x=>x.Id>= dataId[IndexNoOfRow]).Take(Properties.Settings.Default.DataGridViewRowNo).ToList();
+            dataGridView1.DataSource = data.Where(x => x.Id >= dataId[IndexNoOfRow]).Take(Properties.Settings.Default.DataGridViewRowNo).ToList();
             if (dataGridView1.DataSource == null)
             {
                 MessageCollections.ShowErrorServer();
@@ -297,7 +298,7 @@ namespace Asrfly.Gui.GuiCategories
             }
             loadingForm.Hide();
             data.Clear();
-           
+
         }
     }
 }
