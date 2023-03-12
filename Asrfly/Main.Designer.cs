@@ -114,6 +114,7 @@ namespace Asrfly
             this.buttonSuppliers.TabIndex = 3;
             this.buttonSuppliers.Text = "الموردين";
             this.buttonSuppliers.UseVisualStyleBackColor = true;
+            this.buttonSuppliers.Click += new System.EventHandler(this.buttonSuppliers_Click);
             // 
             // buttonProjects
             // 

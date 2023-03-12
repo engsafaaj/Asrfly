@@ -41,5 +41,11 @@ namespace Asrfly
             // Load Customers Page
             pageManager.LoadPage(Gui.GuiCustomers.CustomersUserControl.Instance());
         }
+
+        private void buttonSuppliers_Click(object sender, EventArgs e)
+        {
+            // Load Suppliers Page
+            pageManager.LoadPage(Gui.GuiSuppliers.SuppliersUserControl.Instance());
+        }
     }
 }
