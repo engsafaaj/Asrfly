@@ -13,6 +13,7 @@ namespace Asrfly.Code
             ConfigrationObjectManager.Register("SystemRecords", new SystemRecordsEntity());
             ConfigrationObjectManager.Register("Customers", new CustomersEntity ());
             ConfigrationObjectManager.Register("Suppliers", new SuppliersEntity ());
+            ConfigrationObjectManager.Register("Projects", new ProjectsEntity ());
         }
     }
 }

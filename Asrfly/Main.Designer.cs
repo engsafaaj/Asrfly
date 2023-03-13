@@ -127,6 +127,7 @@ namespace Asrfly
             this.buttonProjects.TabIndex = 4;
             this.buttonProjects.Text = "المشاريع";
             this.buttonProjects.UseVisualStyleBackColor = true;
+            this.buttonProjects.Click += new System.EventHandler(this.buttonProjects_Click);
             // 
             // buttonUsers
             // 

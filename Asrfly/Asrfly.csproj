@@ -21,6 +21,12 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Update="Gui\GuiProjects\AddProjectForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Gui\GuiProjects\ProjectsUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Update="Gui\GuiSuppliers\AddSuppliersForm.cs">
       <SubType>Form</SubType>
     </Compile>

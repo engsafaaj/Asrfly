@@ -26,6 +26,7 @@ namespace Asrfly.Data.SqlServer
         public DbSet<SystemRecords> SystemRecords { get; set; }
         public DbSet<Customers> Customers { get; set; }
         public DbSet<Suppliers> Suppliers { get; set; }
+        public DbSet<Projects> Projects { get; set; }
 
     }
 }
