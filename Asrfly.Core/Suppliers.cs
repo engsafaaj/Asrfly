@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Asrfly.Core
 {
-   public class Suppliers
+    public class Suppliers
     {
         public int Id { get; set; }
         public string Name { get; set; }
@@ -14,5 +14,8 @@ namespace Asrfly.Core
         public string Details { get; set; }
         public double Balance { get; set; }
         public DateTime AddedDate { get; set; }
+
+        // Navigations
+        public virtual List<Outcome> Outcome { get; set; }
     }
 }

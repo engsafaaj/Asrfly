@@ -19,5 +19,8 @@ namespace Asrfly.Core
         public double Revenue { get; set; }
         public DateTime AddedDate { get; set; }
 
+
+        // Navigations
+        public virtual List<Outcome> outcome { get; set; }
     }
 }

@@ -13,23 +13,26 @@ using System.Text;
 using System.Windows.Forms;
 using System.Linq;
 
-namespace Asrfly.Gui.GuiProjects
+namespace Asrfly.Gui.GuiOutcome
 {
-    public partial class ProjectsUserControl : UserControl
+    public partial class OutcomeUserControl : UserControl
     {
         // Variables
-        private readonly IDataHelper<Projects> dataHelper;
+        private readonly IDataHelper<Outcome> dataHelper;
         private readonly IDataHelper<SystemRecords> dataHelperSystemRecords;
-        private static ProjectsUserControl _ProjectsUserControl;
+        private static OutcomeUserControl _OutcomeUserControl;
         private int RowId;
         private readonly GuiLoading.LoadingForm loadingForm;
         private List<int> IdList = new List<int>();
         private string SearchItem;
+        private int ProjectId;
+
         // Constructors
-        public ProjectsUserControl()
+        public OutcomeUserControl(int ProjectId)
         {
             InitializeComponent();
-            dataHelper = (IDataHelper<Projects>)ConfigrationObjectManager.GetObject("Projects");
+            this.ProjectId = ProjectId;
+            dataHelper = (IDataHelper<Outcome>)ConfigrationObjectManager.GetObject("Outcome");
             dataHelperSystemRecords = (IDataHelper<SystemRecords>)ConfigrationObjectManager.GetObject("SystemRecords");
             loadingForm = new GuiLoading.LoadingForm();
             LoadData();
@@ -58,8 +61,8 @@ namespace Asrfly.Gui.GuiProjects
         }
         private void buttonAdd_Click(object sender, EventArgs e)
         {
-            AddProjectForm addProjectsForm = new AddProjectForm(0, this);
-            addProjectsForm.Show();
+            AddOutcomeForm addOutcomeForm = new AddOutcomeForm(0,ProjectId, this);
+            addOutcomeForm.Show();
         }
 
         private void buttonEdit_Click(object sender, EventArgs e)
@@ -90,7 +93,7 @@ namespace Asrfly.Gui.GuiProjects
                                 {
                                     Title = "عملية حذف",
                                     UserName = Properties.Settings.Default.UserName,
-                                    Details = "تم حذف المشروع ذي الرقم التعريفي " + RowId.ToString(),
+                                    Details = "تم حذف عملية الصرف ذي الرقم التعريفي " + RowId.ToString(),
                                     AddedDate = DateTime.Now
                                 };
                                 await dataHelperSystemRecords.AddAsync(systemRecords);
@@ -161,25 +164,12 @@ namespace Asrfly.Gui.GuiProjects
         }
         private void buttonOpen_Click(object sender, EventArgs e)
         {
-            if (dataGridView1.RowCount > 0)
-            {
-                // Get Id
-                RowId = Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value);
-                ProjectManagmentForm projectManagmentForm = new ProjectManagmentForm(RowId);
-                projectManagmentForm.Show();
-            }
-            else
-            {
-                MessageCollections.ShowEmptyDataMessage();
-            }
+
         }
         #endregion
 
         #region Methods
-        public static ProjectsUserControl Instance()
-        {
-            return _ProjectsUserControl ?? (new ProjectsUserControl());
-        }
+       
 
         public async void LoadData()
         {
@@ -213,24 +203,22 @@ namespace Asrfly.Gui.GuiProjects
         private void SetColumnsTitle()
         {
             dataGridView1.Columns[0].HeaderText = "المعرف";
-            dataGridView1.Columns[1].HeaderText = "الاسم";
-            dataGridView1.Columns[2].HeaderText = "العميل";
-            dataGridView1.Columns[3].HeaderText = "العنوان";
-            dataGridView1.Columns[4].HeaderText = "الشركة المنفذة";
-            dataGridView1.Columns[5].HeaderText = "بداية المشروع";
-            dataGridView1.Columns[6].HeaderText = "نهاية المشروع";
-            dataGridView1.Columns[7].HeaderText = "التفاصيل";
-            dataGridView1.Columns[8].HeaderText = "المقبوضات";
-            dataGridView1.Columns[9].HeaderText = "المصروفات";
-            dataGridView1.Columns[10].HeaderText = "الارباح";
-            dataGridView1.Columns[11].HeaderText = "طابع زمني";
+            dataGridView1.Columns[1].HeaderText = "الصنف";
+            dataGridView1.Columns[2].HeaderText = "المورد";
+            dataGridView1.Columns[3].HeaderText = "تاريخ الصرف";
+            dataGridView1.Columns[4].HeaderText = "رقم الوصل";
+            dataGridView1.Columns[5].HeaderText = "الملبغ";
+            dataGridView1.Columns[6].HeaderText = "التفاصيل";
 
             // Hide
-            dataGridView1.Columns[3].Visible = false;
-            dataGridView1.Columns[4].Visible = false;
-            dataGridView1.Columns[5].Visible = false;
-            dataGridView1.Columns[6].Visible = false;
-            dataGridView1.Columns[7].Visible = false;
+            dataGridView1.Columns[7].Visible=false;
+            dataGridView1.Columns[8].Visible=false;
+            dataGridView1.Columns[9].Visible=false;
+            dataGridView1.Columns[10].Visible=false;
+            dataGridView1.Columns[11].Visible=false;
+            dataGridView1.Columns[12].Visible=false;
+
+
         }
 
         private void Edit()
@@ -239,8 +227,8 @@ namespace Asrfly.Gui.GuiProjects
             {
                 // Get Id
                 RowId = Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value);
-                AddProjectForm addProjectsForm = new AddProjectForm(RowId, this);
-                addProjectsForm.Show();
+                AddOutcomeForm addOutcomeForm = new AddOutcomeForm(0, ProjectId, this);
+                addOutcomeForm.Show();
             }
             else
             {
@@ -279,28 +267,19 @@ namespace Asrfly.Gui.GuiProjects
         {
             dataTable.Columns["Id"].SetOrdinal(0);
             dataTable.Columns["Id"].ColumnName = "المعرف";
-            dataTable.Columns["Name"].SetOrdinal(1);
-            dataTable.Columns["Name"].ColumnName = "الاسم";
-            dataTable.Columns["Customer"].SetOrdinal(2);
-            dataTable.Columns["Customer"].ColumnName = "العميل ";
-            dataTable.Columns["Address"].SetOrdinal(3);
-            dataTable.Columns["Address"].ColumnName = "العنوان";
-            dataTable.Columns["Company"].SetOrdinal(4);
-            dataTable.Columns["Company"].ColumnName = " الشركة المنفذة";
-            dataTable.Columns["StartDate"].SetOrdinal(5);
-            dataTable.Columns["StartDate"].ColumnName = "بداية المشروع";
-            dataTable.Columns["FinishDate"].SetOrdinal(6);
-            dataTable.Columns["FinishDate"].ColumnName = "نهاية المشروع";
-            dataTable.Columns["Details"].SetOrdinal(7);
-            dataTable.Columns["Details"].ColumnName = " التفاصيل";
-            dataTable.Columns["Income"].SetOrdinal(8);
-            dataTable.Columns["Outcome"].ColumnName = " المقبوضات";
-            dataTable.Columns["Income"].SetOrdinal(9);
-            dataTable.Columns["Outcome"].ColumnName = " المصروفات";
-            dataTable.Columns["Revenue"].SetOrdinal(10);
-            dataTable.Columns["Revenue"].ColumnName = " الارباح";
-            dataTable.Columns["AddedDate"].SetOrdinal(11);
-            dataTable.Columns["AddedDate"].ColumnName = " طابع زمني";
+            dataTable.Columns["CategoryName"].SetOrdinal(1);
+            dataTable.Columns["CategoryName"].ColumnName = "اسم الصنف";
+            dataTable.Columns["SupplierName"].SetOrdinal(2);
+            dataTable.Columns["SupplierName"].ColumnName = "المورد ";
+            dataTable.Columns["OutcomeDate"].SetOrdinal(3);
+            dataTable.Columns["OutcomeDate"].ColumnName = "تاريخ الصرف";
+            dataTable.Columns["RecNo"].SetOrdinal(4);
+            dataTable.Columns["RecNo"].ColumnName = "رقم الوصل";
+            dataTable.Columns["Amount"].SetOrdinal(5);
+            dataTable.Columns["Amount"].ColumnName = "المبلغ";
+            dataTable.Columns["Details"].SetOrdinal(6);
+            dataTable.Columns["Details"].ColumnName = "التفاصيل";
+
             return dataTable;
         }
 

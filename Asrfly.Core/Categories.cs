@@ -12,5 +12,8 @@ namespace Asrfly.Core
         public string Details { get; set; }
         public double Balance { get; set; }
         public DateTime AddedDate { get; set; }
+
+        // Navigations
+        public virtual List<Outcome> Outcome { get; set; }
     }
 }
