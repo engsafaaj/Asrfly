@@ -48,6 +48,7 @@ namespace Asrfly.Gui.GuiCategories
                 {
                     if (ID == 0)
                     {
+                        this.DialogResult = DialogResult.OK;
                         MessageCollections.ShowAddNotificaiton();
                     }
                     else
@@ -78,6 +79,7 @@ namespace Asrfly.Gui.GuiCategories
                     if (ID == 0)
                     {
                         MessageCollections.ShowAddNotificaiton();
+                        this.DialogResult = DialogResult.OK;
                     }
                     else
                     {

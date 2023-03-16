@@ -2,7 +2,7 @@
 using Asrfly.Core;
 using Asrfly.Data;
 using Asrfly.Gui.GuiCategories;
-using Asrfly.Gui.GuiSuppliers;
+using Asrfly.Gui.GuiCustomers;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,28 +13,28 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Asrfly.Gui.GuiOutcome
+namespace Asrfly.Gui.GuiIncome
 {
-    public partial class AddOutcomeForm : Form
+    public partial class AddIncomeForm : Form
     {
         // Variables
         private readonly int ID;
-        private readonly OutcomeUserControl categoryUserControl;
-        private Outcome outcome;
+        private readonly IncomeUserControl categoryUserControl;
+        private Income income;
         private int CategoryId;
         private int SupplierId;
         private int ProjectId;
-        private readonly IDataHelper<Outcome> dataHelper;
-        private readonly IDataHelper<Suppliers> dataHelperSuppliers;
+        private readonly IDataHelper<Income> dataHelper;
+        private readonly IDataHelper<Customers> dataHelperCustomers;
         private readonly IDataHelper<Categories> dataHelperCategories;
         private readonly GuiLoading.LoadingForm loadingForm;
         private readonly IDataHelper<SystemRecords> dataHelperSystemRecords;
 
-        public AddOutcomeForm(int Id, int ProjectId, OutcomeUserControl ctegoryUserControl)
+        public AddIncomeForm(int Id, int ProjectId, IncomeUserControl ctegoryUserControl)
         {
             InitializeComponent();
-            dataHelper = (IDataHelper<Outcome>)ConfigrationObjectManager.GetObject("Outcome");
-            dataHelperSuppliers = (IDataHelper<Suppliers>)ConfigrationObjectManager.GetObject("Suppliers");
+            dataHelper = (IDataHelper<Income>)ConfigrationObjectManager.GetObject("Income");
+            dataHelperCustomers = (IDataHelper<Customers>)ConfigrationObjectManager.GetObject("Customers");
             dataHelperCategories = (IDataHelper<Categories>)ConfigrationObjectManager.GetObject("Categories");
             dataHelperSystemRecords = (IDataHelper<SystemRecords>)ConfigrationObjectManager.GetObject("SystemRecords");
 
@@ -155,28 +155,28 @@ namespace Asrfly.Gui.GuiOutcome
         private async Task<bool> AddData()
         {
             // Set Data
-            outcome = new Outcome
+            income = new Income
             {
                 CategoryName = comboBoxCategory.SelectedItem.ToString(),
                 SupplierName = comboBoxCategory.SelectedItem.ToString(),
                 RecNo = textBoxRecNo.Text,
                 Details = richTextBoxDetails.Text,
                 Amount = Convert.ToDouble(textBoxAmount.Text),
-                OutcomeDate = dateTimePickerDate.Value,
+                IncomeDate = dateTimePickerDate.Value,
                 CategroyId = CategoryId,
                 SupplierId = SupplierId,
                 ProjectId = ProjectId
             };
             // Sumbit
-            var result = await dataHelper.AddAsync(outcome);
+            var result = await dataHelper.AddAsync(income);
             if (result == 1)
             {
                 // Save System Records
                 SystemRecords systemRecords = new SystemRecords
                 {
-                    Title = " اضافة عملية صرف",
+                    Title = " اضافة عملية قبض",
                     UserName = Properties.Settings.Default.UserName,
-                    Details = "تمت اضافة عملية صرف  " + outcome.CategoryName,
+                    Details = "تمت اضافة عملية قبض  " + income.CategoryName,
                     AddedDate = DateTime.Now
                 };
                 await dataHelperSystemRecords.AddAsync(systemRecords);
@@ -192,7 +192,7 @@ namespace Asrfly.Gui.GuiOutcome
         private async Task<bool> EditData()
         {
             // Set Data
-            outcome = new Outcome
+            income = new Income
             {
                 Id = ID,
                 CategoryName = comboBoxCategory.SelectedItem.ToString(),
@@ -200,21 +200,21 @@ namespace Asrfly.Gui.GuiOutcome
                 RecNo = textBoxRecNo.Text,
                 Details = richTextBoxDetails.Text,
                 Amount = Convert.ToDouble(textBoxAmount.Text),
-                OutcomeDate = dateTimePickerDate.Value,
+                IncomeDate = dateTimePickerDate.Value,
                 CategroyId = CategoryId,
                 SupplierId = SupplierId,
                 ProjectId = ProjectId
             };
             // Sumbit
-            var result = await dataHelper.EditAsync(outcome);
+            var result = await dataHelper.EditAsync(income);
             if (result == 1)
             {
                 // Save System Records
                 SystemRecords systemRecords = new SystemRecords
                 {
-                    Title = " تعديل عملة صرف",
+                    Title = " تعديل عملة قبض",
                     UserName = Properties.Settings.Default.UserName,
-                    Details = "تم تعديل عملة صرف  " + outcome.CategoryName,
+                    Details = "تم تعديل عملة قبض  " + income.CategoryName,
                     AddedDate = DateTime.Now
                 };
                 await dataHelperSystemRecords.AddAsync(systemRecords);
@@ -230,15 +230,15 @@ namespace Asrfly.Gui.GuiOutcome
 
         private async void SetFiledData()
         {
-            // Get List of Suppliers
-            var ListSuppliers = await dataHelperSuppliers.GetAllDataAsync();
-            comboBoxsupplier.DataSource = ListSuppliers.Select(x => x.Name).ToList(); // Fill 
+            // Get List of Customers
+            var ListCustomers = await dataHelperCustomers.GetAllDataAsync();
+            comboBoxsupplier.DataSource = ListCustomers.Select(x => x.Name).ToList(); // Fill 
                                                                                       // Auto Complete
             AutoCompleteStringCollection autoCompleteString = new AutoCompleteStringCollection();
-            autoCompleteString.AddRange(ListSuppliers.Select(x => x.Name).ToArray());
+            autoCompleteString.AddRange(ListCustomers.Select(x => x.Name).ToArray());
             comboBoxsupplier.AutoCompleteCustomSource = autoCompleteString;
 
-            ListSuppliers.Clear(); // clear 
+            ListCustomers.Clear(); // clear 
 
 
             // Get List of Categories
@@ -254,18 +254,18 @@ namespace Asrfly.Gui.GuiOutcome
             if (ID > 0)
             {
                 // Set Fileds
-                outcome = await dataHelper.FindAsync(ID);
-                if (outcome != null)
+                income = await dataHelper.FindAsync(ID);
+                if (income != null)
                 {
-                    comboBoxCategory.SelectedItem = outcome.CategoryName;
-                    comboBoxCategory.SelectedItem = outcome.SupplierName;
-                    textBoxRecNo.Text = outcome.RecNo;
-                    richTextBoxDetails.Text = outcome.Details;
-                    textBoxAmount.Text = outcome.Amount.ToString();
-                    dateTimePickerDate.Value = outcome.OutcomeDate;
-                    CategoryId = outcome.CategroyId;
-                    SupplierId = outcome.SupplierId;
-                    ProjectId = outcome.ProjectId;
+                    comboBoxCategory.SelectedItem = income.CategoryName;
+                    comboBoxCategory.SelectedItem = income.SupplierName;
+                    textBoxRecNo.Text = income.RecNo;
+                    richTextBoxDetails.Text = income.Details;
+                    textBoxAmount.Text = income.Amount.ToString();
+                    dateTimePickerDate.Value = income.IncomeDate;
+                    CategoryId = income.CategroyId;
+                    SupplierId = income.SupplierId;
+                    ProjectId = income.ProjectId;
                 }
                 else
                 {
@@ -288,7 +288,7 @@ namespace Asrfly.Gui.GuiOutcome
         private void SetSupplierId(string SupplierName)
         {
 
-            SupplierId = dataHelperSuppliers.GetAllData().Where(x => x.Name == SupplierName)
+            SupplierId = dataHelperCustomers.GetAllData().Where(x => x.Name == SupplierName)
                 .Select(x => x.Id).First();
 
         }
@@ -296,7 +296,7 @@ namespace Asrfly.Gui.GuiOutcome
         private async void linkLabelNewCategory_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             AddCategoryForm addCategoryForm = new AddCategoryForm(0, new CategoryUserControl());
-            var result = addCategoryForm.ShowDialog();
+           var result= addCategoryForm.ShowDialog();
             if (result == DialogResult.OK)
             {
                 // Get List of Categories
@@ -311,22 +311,27 @@ namespace Asrfly.Gui.GuiOutcome
             }
         }
 
-        private async void linkLabelNewSupplier_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        private async void linkLabelNewCustomer_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            AddSuppliersForm addSuppliersForm = new AddSuppliersForm(0, new SuppliersUserControl());
-            var result = addSuppliersForm.ShowDialog();
+            AddCustomersForm addCustomersForm = new AddCustomersForm(0, new CustomersUserControl());
+           var result= addCustomersForm.ShowDialog();
             if (result == DialogResult.OK)
             {
-                // Get List of Suppliers
-                var ListSuppliers = await dataHelperSuppliers.GetAllDataAsync();
-                comboBoxsupplier.DataSource = ListSuppliers.Select(x => x.Name).ToList(); // Fill 
+                // Get List of Customers
+                var ListCustomers = await dataHelperCustomers.GetAllDataAsync();
+                comboBoxsupplier.DataSource = ListCustomers.Select(x => x.Name).ToList(); // Fill 
                                                                                           // Auto Complete
                 AutoCompleteStringCollection autoCompleteString = new AutoCompleteStringCollection();
-                autoCompleteString.AddRange(ListSuppliers.Select(x => x.Name).ToArray());
+                autoCompleteString.AddRange(ListCustomers.Select(x => x.Name).ToArray());
                 comboBoxsupplier.AutoCompleteCustomSource = autoCompleteString;
 
-                ListSuppliers.Clear(); // clear 
+                ListCustomers.Clear(); // clear 
             }
+        }
+
+        private void AddIncomeForm_Activated(object sender, EventArgs e)
+        {
+            
         }
     }
 }

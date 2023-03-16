@@ -13,14 +13,14 @@ using System.Text;
 using System.Windows.Forms;
 using System.Linq;
 
-namespace Asrfly.Gui.GuiOutcome
+namespace Asrfly.Gui.GuiIncome
 {
-    public partial class OutcomeUserControl : UserControl
+    public partial class IncomeUserControl : UserControl
     {
         // Variables
-        private readonly IDataHelper<Outcome> dataHelper;
+        private readonly IDataHelper<Income> dataHelper;
         private readonly IDataHelper<SystemRecords> dataHelperSystemRecords;
-        private static OutcomeUserControl _OutcomeUserControl;
+        private static IncomeUserControl _IncomeUserControl;
         private int RowId;
         private readonly GuiLoading.LoadingForm loadingForm;
         private List<int> IdList = new List<int>();
@@ -28,11 +28,11 @@ namespace Asrfly.Gui.GuiOutcome
         private int ProjectId;
 
         // Constructors
-        public OutcomeUserControl(int ProjectId)
+        public IncomeUserControl(int ProjectId)
         {
             InitializeComponent();
             this.ProjectId = ProjectId;
-            dataHelper = (IDataHelper<Outcome>)ConfigrationObjectManager.GetObject("Outcome");
+            dataHelper = (IDataHelper<Income>)ConfigrationObjectManager.GetObject("Income");
             dataHelperSystemRecords = (IDataHelper<SystemRecords>)ConfigrationObjectManager.GetObject("SystemRecords");
             loadingForm = new GuiLoading.LoadingForm();
             LoadData();
@@ -61,8 +61,8 @@ namespace Asrfly.Gui.GuiOutcome
         }
         private void buttonAdd_Click(object sender, EventArgs e)
         {
-            AddOutcomeForm addOutcomeForm = new AddOutcomeForm(0,ProjectId, this);
-            addOutcomeForm.Show();
+            AddIncomeForm addIncomeForm = new AddIncomeForm(0,ProjectId, this);
+            addIncomeForm.Show();
         }
 
         private void buttonEdit_Click(object sender, EventArgs e)
@@ -93,7 +93,7 @@ namespace Asrfly.Gui.GuiOutcome
                                 {
                                     Title = "عملية حذف",
                                     UserName = Properties.Settings.Default.UserName,
-                                    Details = "تم حذف عملية الصرف ذي الرقم التعريفي " + RowId.ToString(),
+                                    Details = "تم حذف عملية قبض ذي الرقم التعريفي " + RowId.ToString(),
                                     AddedDate = DateTime.Now
                                 };
                                 await dataHelperSystemRecords.AddAsync(systemRecords);
@@ -204,7 +204,7 @@ namespace Asrfly.Gui.GuiOutcome
         {
             dataGridView1.Columns[0].HeaderText = "المعرف";
             dataGridView1.Columns[1].HeaderText = "الصنف";
-            dataGridView1.Columns[2].HeaderText = "المورد";
+            dataGridView1.Columns[2].HeaderText = "العميل";
             dataGridView1.Columns[3].HeaderText = "تاريخ الصرف";
             dataGridView1.Columns[4].HeaderText = "رقم الوصل";
             dataGridView1.Columns[5].HeaderText = "المبلغ";
@@ -227,8 +227,8 @@ namespace Asrfly.Gui.GuiOutcome
             {
                 // Get Id
                 RowId = Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value);
-                AddOutcomeForm addOutcomeForm = new AddOutcomeForm(0, ProjectId, this);
-                addOutcomeForm.Show();
+                AddIncomeForm addIncomeForm = new AddIncomeForm(0, ProjectId, this);
+                addIncomeForm.Show();
             }
             else
             {
@@ -272,9 +272,9 @@ namespace Asrfly.Gui.GuiOutcome
             dataTable.Columns["CategoryName"].SetOrdinal(1);
             dataTable.Columns["CategoryName"].ColumnName = "اسم الصنف";
             dataTable.Columns["SupplierName"].SetOrdinal(2);
-            dataTable.Columns["SupplierName"].ColumnName = "المورد ";
-            dataTable.Columns["OutcomeDate"].SetOrdinal(3);
-            dataTable.Columns["OutcomeDate"].ColumnName = "تاريخ الصرف";
+            dataTable.Columns["SupplierName"].ColumnName = "العميل ";
+            dataTable.Columns["IncomeDate"].SetOrdinal(3);
+            dataTable.Columns["IncomeDate"].ColumnName = "تاريخ الصرف";
             dataTable.Columns["RecNo"].SetOrdinal(4);
             dataTable.Columns["RecNo"].ColumnName = "رقم الوصل";
             dataTable.Columns["Amount"].SetOrdinal(5);

@@ -157,9 +157,21 @@ namespace Asrfly.Gui.GuiProjects
 
         private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            Edit();
+            ProjectExplor();
         }
         private void buttonOpen_Click(object sender, EventArgs e)
+        {
+            ProjectExplor();
+        }
+        #endregion
+
+        #region Methods
+        public static ProjectsUserControl Instance()
+        {
+            return _ProjectsUserControl ?? (new ProjectsUserControl());
+        }
+
+        private void ProjectExplor()
         {
             if (dataGridView1.RowCount > 0)
             {
@@ -173,14 +185,6 @@ namespace Asrfly.Gui.GuiProjects
                 MessageCollections.ShowEmptyDataMessage();
             }
         }
-        #endregion
-
-        #region Methods
-        public static ProjectsUserControl Instance()
-        {
-            return _ProjectsUserControl ?? (new ProjectsUserControl());
-        }
-
         public async void LoadData()
         {
             loadingForm.Show();

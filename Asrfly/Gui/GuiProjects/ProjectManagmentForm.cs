@@ -17,6 +17,7 @@ namespace Asrfly.Gui.GuiProjects
             InitializeComponent();
             projectId = ProjectId;
             LoadOutComeUI();
+            LoadIncomeUI();
 
 
         }
@@ -27,6 +28,13 @@ namespace Asrfly.Gui.GuiProjects
             GuiOutcome.OutcomeUserControl outcomeUserControl = new GuiOutcome.OutcomeUserControl(projectId);
             outcomeUserControl.Dock = DockStyle.Fill;
             panelOutcome.Controls.Add(outcomeUserControl);
+        }
+        private void LoadIncomeUI()
+        {
+            // Load OutCome UI
+            GuiIncome.IncomeUserControl IncomeUserControl = new GuiIncome.IncomeUserControl(projectId);
+            IncomeUserControl.Dock = DockStyle.Fill;
+            panelIncome.Controls.Add(IncomeUserControl);
         }
     }
 }

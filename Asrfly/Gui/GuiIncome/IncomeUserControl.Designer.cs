@@ -1,7 +1,7 @@
 ﻿
-namespace Asrfly.Gui.GuiSuppliers
+namespace Asrfly.Gui.GuiIncome
 {
-    partial class SuppliersUserControl
+    partial class IncomeUserControl
     {
         /// <summary> 
         /// Required designer variable.
@@ -45,6 +45,7 @@ namespace Asrfly.Gui.GuiSuppliers
             this.buttonSearch = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.comboBoxPageNo = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.flowLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -64,71 +65,76 @@ namespace Asrfly.Gui.GuiSuppliers
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Padding = new System.Windows.Forms.Padding(5);
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(1262, 77);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(980, 80);
             this.flowLayoutPanel1.TabIndex = 0;
             // 
             // buttonAdd
             // 
             this.buttonAdd.Image = global::Asrfly.Properties.Resources.icons8_add_32px;
-            this.buttonAdd.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonAdd.Location = new System.Drawing.Point(1112, 10);
-            this.buttonAdd.Margin = new System.Windows.Forms.Padding(5);
+            this.buttonAdd.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.buttonAdd.Location = new System.Drawing.Point(868, 7);
+            this.buttonAdd.Margin = new System.Windows.Forms.Padding(2);
             this.buttonAdd.Name = "buttonAdd";
-            this.buttonAdd.Size = new System.Drawing.Size(135, 55);
+            this.buttonAdd.Size = new System.Drawing.Size(100, 68);
             this.buttonAdd.TabIndex = 1;
             this.buttonAdd.Text = "اضافة";
+            this.buttonAdd.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.buttonAdd.UseVisualStyleBackColor = true;
             this.buttonAdd.Click += new System.EventHandler(this.buttonAdd_Click);
             // 
             // buttonEdit
             // 
             this.buttonEdit.Image = global::Asrfly.Properties.Resources.icons8_edit_32px;
-            this.buttonEdit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonEdit.Location = new System.Drawing.Point(967, 10);
-            this.buttonEdit.Margin = new System.Windows.Forms.Padding(5);
+            this.buttonEdit.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.buttonEdit.Location = new System.Drawing.Point(764, 7);
+            this.buttonEdit.Margin = new System.Windows.Forms.Padding(2);
             this.buttonEdit.Name = "buttonEdit";
-            this.buttonEdit.Size = new System.Drawing.Size(135, 55);
+            this.buttonEdit.Size = new System.Drawing.Size(100, 68);
             this.buttonEdit.TabIndex = 2;
             this.buttonEdit.Text = "تعديل";
+            this.buttonEdit.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.buttonEdit.UseVisualStyleBackColor = true;
             this.buttonEdit.Click += new System.EventHandler(this.buttonEdit_Click);
             // 
             // buttonDelete
             // 
             this.buttonDelete.Image = global::Asrfly.Properties.Resources.icons8_Delete_32px;
-            this.buttonDelete.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonDelete.Location = new System.Drawing.Point(822, 10);
-            this.buttonDelete.Margin = new System.Windows.Forms.Padding(5);
+            this.buttonDelete.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.buttonDelete.Location = new System.Drawing.Point(660, 7);
+            this.buttonDelete.Margin = new System.Windows.Forms.Padding(2);
             this.buttonDelete.Name = "buttonDelete";
-            this.buttonDelete.Size = new System.Drawing.Size(135, 55);
+            this.buttonDelete.Size = new System.Drawing.Size(100, 68);
             this.buttonDelete.TabIndex = 3;
             this.buttonDelete.Text = "حذف";
+            this.buttonDelete.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.buttonDelete.UseVisualStyleBackColor = true;
             this.buttonDelete.Click += new System.EventHandler(this.buttonDelete_Click);
             // 
             // buttonUpdate
             // 
             this.buttonUpdate.Image = global::Asrfly.Properties.Resources.icons8_update_32px;
-            this.buttonUpdate.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonUpdate.Location = new System.Drawing.Point(677, 10);
-            this.buttonUpdate.Margin = new System.Windows.Forms.Padding(5);
+            this.buttonUpdate.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.buttonUpdate.Location = new System.Drawing.Point(556, 7);
+            this.buttonUpdate.Margin = new System.Windows.Forms.Padding(2);
             this.buttonUpdate.Name = "buttonUpdate";
-            this.buttonUpdate.Size = new System.Drawing.Size(135, 55);
+            this.buttonUpdate.Size = new System.Drawing.Size(100, 68);
             this.buttonUpdate.TabIndex = 6;
             this.buttonUpdate.Text = "تحديث";
+            this.buttonUpdate.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.buttonUpdate.UseVisualStyleBackColor = true;
             this.buttonUpdate.Click += new System.EventHandler(this.buttonUpdate_Click);
             // 
             // buttonExport
             // 
             this.buttonExport.Image = global::Asrfly.Properties.Resources.icons8_xls_export_32px;
-            this.buttonExport.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonExport.Location = new System.Drawing.Point(532, 10);
-            this.buttonExport.Margin = new System.Windows.Forms.Padding(5);
+            this.buttonExport.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.buttonExport.Location = new System.Drawing.Point(452, 7);
+            this.buttonExport.Margin = new System.Windows.Forms.Padding(2);
             this.buttonExport.Name = "buttonExport";
-            this.buttonExport.Size = new System.Drawing.Size(135, 55);
+            this.buttonExport.Size = new System.Drawing.Size(100, 68);
             this.buttonExport.TabIndex = 4;
             this.buttonExport.Text = "تصدير";
+            this.buttonExport.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.buttonExport.UseVisualStyleBackColor = true;
             this.buttonExport.Click += new System.EventHandler(this.buttonExport_Click);
             // 
@@ -137,19 +143,20 @@ namespace Asrfly.Gui.GuiSuppliers
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.textBoxSearch);
             this.panel1.Controls.Add(this.buttonSearch);
-            this.panel1.Location = new System.Drawing.Point(30, 8);
-            this.panel1.Margin = new System.Windows.Forms.Padding(3, 3, 5, 3);
+            this.panel1.Font = new System.Drawing.Font("Cairo", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.panel1.Location = new System.Drawing.Point(132, 12);
+            this.panel1.Margin = new System.Windows.Forms.Padding(3, 7, 5, 3);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(494, 57);
+            this.panel1.Size = new System.Drawing.Size(315, 56);
             this.panel1.TabIndex = 5;
             // 
             // textBoxSearch
             // 
             this.textBoxSearch.Dock = System.Windows.Forms.DockStyle.Fill;
             this.textBoxSearch.Font = new System.Drawing.Font("Cairo", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBoxSearch.Location = new System.Drawing.Point(97, 0);
+            this.textBoxSearch.Location = new System.Drawing.Point(48, 0);
             this.textBoxSearch.Name = "textBoxSearch";
-            this.textBoxSearch.Size = new System.Drawing.Size(395, 57);
+            this.textBoxSearch.Size = new System.Drawing.Size(265, 57);
             this.textBoxSearch.TabIndex = 5;
             this.textBoxSearch.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBoxSearch.TextChanged += new System.EventHandler(this.textBoxSearch_TextChanged);
@@ -167,7 +174,7 @@ namespace Asrfly.Gui.GuiSuppliers
             this.buttonSearch.Location = new System.Drawing.Point(0, 0);
             this.buttonSearch.Margin = new System.Windows.Forms.Padding(5);
             this.buttonSearch.Name = "buttonSearch";
-            this.buttonSearch.Size = new System.Drawing.Size(97, 55);
+            this.buttonSearch.Size = new System.Drawing.Size(48, 54);
             this.buttonSearch.TabIndex = 4;
             this.buttonSearch.Text = "   بحث";
             this.buttonSearch.UseVisualStyleBackColor = false;
@@ -197,10 +204,10 @@ namespace Asrfly.Gui.GuiSuppliers
             dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 77);
+            this.dataGridView1.Location = new System.Drawing.Point(0, 80);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
@@ -215,7 +222,7 @@ namespace Asrfly.Gui.GuiSuppliers
             dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle5;
             this.dataGridView1.RowTemplate.Height = 29;
-            this.dataGridView1.Size = new System.Drawing.Size(1262, 523);
+            this.dataGridView1.Size = new System.Drawing.Size(980, 520);
             this.dataGridView1.TabIndex = 1;
             this.dataGridView1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellDoubleClick);
             // 
@@ -230,19 +237,31 @@ namespace Asrfly.Gui.GuiSuppliers
             this.comboBoxPageNo.TabIndex = 3;
             this.comboBoxPageNo.SelectedIndexChanged += new System.EventHandler(this.comboBoxPageNo_SelectedIndexChanged);
             // 
-            // SuppliersUserControl
+            // label1
+            // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.label1.Font = new System.Drawing.Font("Cairo", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label1.Location = new System.Drawing.Point(821, 562);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(159, 38);
+            this.label1.TabIndex = 5;
+            this.label1.Text = "المقبوضات";
+            // 
+            // IncomeUserControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 37F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.comboBoxPageNo);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.flowLayoutPanel1);
             this.Font = new System.Drawing.Font("Cairo", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.Name = "SuppliersUserControl";
+            this.Name = "IncomeUserControl";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.Size = new System.Drawing.Size(1262, 600);
+            this.Size = new System.Drawing.Size(980, 600);
             this.flowLayoutPanel1.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -264,5 +283,6 @@ namespace Asrfly.Gui.GuiSuppliers
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button buttonUpdate;
         private System.Windows.Forms.ComboBox comboBoxPageNo;
+        private System.Windows.Forms.Label label1;
     }
 }

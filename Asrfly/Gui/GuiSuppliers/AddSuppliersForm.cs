@@ -77,6 +77,7 @@ namespace Asrfly.Gui.GuiSuppliers
                 {
                     if (ID == 0)
                     {
+                        this.DialogResult = DialogResult.OK;
                         MessageCollections.ShowAddNotificaiton();
                     }
                     else

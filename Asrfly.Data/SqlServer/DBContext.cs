@@ -28,6 +28,7 @@ namespace Asrfly.Data.SqlServer
         public DbSet<Suppliers> Suppliers { get; set; }
         public DbSet<Projects> Projects { get; set; }
         public DbSet<Outcome> Outcome { get; set; }
+        public DbSet<Income> Income { get; set; }
 
     }
 }

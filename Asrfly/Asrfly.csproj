@@ -21,6 +21,12 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Update="Gui\GuiIncome\AddIncomeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Gui\GuiIncome\IncomeUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Update="Gui\GuiOutcome\AddOutcomeForm.cs">
       <SubType>Form</SubType>
     </Compile>

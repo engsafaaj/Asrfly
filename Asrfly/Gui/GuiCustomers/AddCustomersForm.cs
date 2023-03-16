@@ -48,6 +48,7 @@ namespace Asrfly.Gui.GuiCustomers
                 {
                     if (ID == 0)
                     {
+                        this.DialogResult = DialogResult.OK;
                         MessageCollections.ShowAddNotificaiton();
                     }
                     else
@@ -77,6 +78,7 @@ namespace Asrfly.Gui.GuiCustomers
                 {
                     if (ID == 0)
                     {
+                        this.DialogResult = DialogResult.OK;
                         MessageCollections.ShowAddNotificaiton();
                     }
                     else

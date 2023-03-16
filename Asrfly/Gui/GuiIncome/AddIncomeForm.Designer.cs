@@ -1,7 +1,7 @@
 ﻿
-namespace Asrfly.Gui.GuiOutcome
+namespace Asrfly.Gui.GuiIncome
 {
-    partial class AddOutcomeForm
+    partial class AddIncomeForm
     {
         /// <summary>
         /// Required designer variable.
@@ -51,8 +51,8 @@ namespace Asrfly.Gui.GuiOutcome
             this.label11 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.linkLabelNewSupplier = new System.Windows.Forms.LinkLabel();
             this.linkLabelNewCategory = new System.Windows.Forms.LinkLabel();
+            this.linkLabelNewCustomer = new System.Windows.Forms.LinkLabel();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -123,11 +123,11 @@ namespace Asrfly.Gui.GuiOutcome
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(500, 116);
+            this.label2.Location = new System.Drawing.Point(515, 124);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(74, 37);
+            this.label2.Size = new System.Drawing.Size(75, 37);
             this.label2.TabIndex = 0;
-            this.label2.Text = "المورد ";
+            this.label2.Text = "العميل";
             // 
             // label3
             // 
@@ -148,9 +148,9 @@ namespace Asrfly.Gui.GuiOutcome
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.linkLabelNewSupplier);
-            this.groupBox1.Controls.Add(this.dateTimePickerDate);
+            this.groupBox1.Controls.Add(this.linkLabelNewCustomer);
             this.groupBox1.Controls.Add(this.linkLabelNewCategory);
+            this.groupBox1.Controls.Add(this.dateTimePickerDate);
             this.groupBox1.Controls.Add(this.comboBoxCategory);
             this.groupBox1.Controls.Add(this.comboBoxsupplier);
             this.groupBox1.Controls.Add(this.richTextBoxDetails);
@@ -173,7 +173,7 @@ namespace Asrfly.Gui.GuiOutcome
             this.groupBox1.Size = new System.Drawing.Size(610, 500);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "ملعومات الصرف";
+            this.groupBox1.Text = "معلومات الصرف";
             // 
             // dateTimePickerDate
             // 
@@ -270,7 +270,7 @@ namespace Asrfly.Gui.GuiOutcome
             // 
             this.label4.AutoSize = true;
             this.label4.ForeColor = System.Drawing.Color.Red;
-            this.label4.Location = new System.Drawing.Point(407, 116);
+            this.label4.Location = new System.Drawing.Point(490, 118);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(25, 37);
             this.label4.TabIndex = 0;
@@ -286,31 +286,31 @@ namespace Asrfly.Gui.GuiOutcome
             this.label7.TabIndex = 0;
             this.label7.Text = "*";
             // 
-            // linkLabelNewSupplier
-            // 
-            this.linkLabelNewSupplier.AutoSize = true;
-            this.linkLabelNewSupplier.Font = new System.Drawing.Font("Cairo", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.linkLabelNewSupplier.Location = new System.Drawing.Point(413, 124);
-            this.linkLabelNewSupplier.Name = "linkLabelNewSupplier";
-            this.linkLabelNewSupplier.Size = new System.Drawing.Size(46, 32);
-            this.linkLabelNewSupplier.TabIndex = 7;
-            this.linkLabelNewSupplier.TabStop = true;
-            this.linkLabelNewSupplier.Text = "جديد";
-            this.linkLabelNewSupplier.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabelNewSupplier_LinkClicked);
-            // 
             // linkLabelNewCategory
             // 
             this.linkLabelNewCategory.AutoSize = true;
             this.linkLabelNewCategory.Font = new System.Drawing.Font("Cairo", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.linkLabelNewCategory.Location = new System.Drawing.Point(417, 48);
+            this.linkLabelNewCategory.Location = new System.Drawing.Point(411, 52);
             this.linkLabelNewCategory.Name = "linkLabelNewCategory";
             this.linkLabelNewCategory.Size = new System.Drawing.Size(46, 32);
-            this.linkLabelNewCategory.TabIndex = 8;
+            this.linkLabelNewCategory.TabIndex = 6;
             this.linkLabelNewCategory.TabStop = true;
             this.linkLabelNewCategory.Text = "جديد";
             this.linkLabelNewCategory.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabelNewCategory_LinkClicked);
             // 
-            // AddOutcomeForm
+            // linkLabelNewCustomer
+            // 
+            this.linkLabelNewCustomer.AutoSize = true;
+            this.linkLabelNewCustomer.Font = new System.Drawing.Font("Cairo", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.linkLabelNewCustomer.Location = new System.Drawing.Point(407, 128);
+            this.linkLabelNewCustomer.Name = "linkLabelNewCustomer";
+            this.linkLabelNewCustomer.Size = new System.Drawing.Size(46, 32);
+            this.linkLabelNewCustomer.TabIndex = 6;
+            this.linkLabelNewCustomer.TabStop = true;
+            this.linkLabelNewCustomer.Text = "جديد";
+            this.linkLabelNewCustomer.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabelNewCustomer_LinkClicked);
+            // 
+            // AddIncomeForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 37F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -322,14 +322,15 @@ namespace Asrfly.Gui.GuiOutcome
             this.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "AddOutcomeForm";
+            this.Name = "AddIncomeForm";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.RightToLeftLayout = true;
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "اضافة / تعديل صرف";
+            this.Text = "اضافة / تعديل قبض";
             this.TopMost = true;
+            this.Activated += new System.EventHandler(this.AddIncomeForm_Activated);
             this.Load += new System.EventHandler(this.AddCategoryForm_Load);
             this.panel1.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
@@ -362,7 +363,7 @@ namespace Asrfly.Gui.GuiOutcome
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.LinkLabel linkLabelNewSupplier;
+        private System.Windows.Forms.LinkLabel linkLabelNewCustomer;
         private System.Windows.Forms.LinkLabel linkLabelNewCategory;
     }
 }
