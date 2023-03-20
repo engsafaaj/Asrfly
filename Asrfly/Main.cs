@@ -29,7 +29,7 @@ namespace Asrfly
             // Load Home Page
             pageManager.LoadPage(Gui.GuiHome.HomeUserControl.Instance());
         }
-        private void buttonCategory_Click(object sender, EventArgs e)
+        private  void buttonCategory_Click(object sender, EventArgs e)
         {
             // Load Categories Page
             pageManager.LoadPage(Gui.GuiCategories.CategoryUserControl.Instance());

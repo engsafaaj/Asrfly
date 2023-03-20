@@ -243,6 +243,7 @@ namespace Asrfly.Gui.GuiCategories
             this.Name = "CategoryUserControl";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.Size = new System.Drawing.Size(1262, 600);
+            this.Leave += new System.EventHandler(this.CategoryUserControl_Leave);
             this.flowLayoutPanel1.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

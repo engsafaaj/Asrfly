@@ -30,9 +30,9 @@ namespace Asrfly.Gui.GuiProjects
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.labelRev = new System.Windows.Forms.Label();
+            this.labelIncome = new System.Windows.Forms.Label();
+            this.labelOutcome = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panelIncome = new System.Windows.Forms.Panel();
@@ -43,9 +43,9 @@ namespace Asrfly.Gui.GuiProjects
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.label4);
-            this.panel1.Controls.Add(this.label3);
-            this.panel1.Controls.Add(this.label2);
+            this.panel1.Controls.Add(this.labelRev);
+            this.panel1.Controls.Add(this.labelIncome);
+            this.panel1.Controls.Add(this.labelOutcome);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel1.Location = new System.Drawing.Point(0, 567);
@@ -53,38 +53,40 @@ namespace Asrfly.Gui.GuiProjects
             this.panel1.Size = new System.Drawing.Size(1062, 106);
             this.panel1.TabIndex = 0;
             // 
-            // label4
+            // labelRev
             // 
-            this.label4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label4.Dock = System.Windows.Forms.DockStyle.Left;
-            this.label4.Location = new System.Drawing.Point(428, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(214, 106);
-            this.label4.TabIndex = 3;
-            this.label4.Text = "الارباح: 0000000";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.labelRev.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.labelRev.Dock = System.Windows.Forms.DockStyle.Left;
+            this.labelRev.Location = new System.Drawing.Point(428, 0);
+            this.labelRev.Name = "labelRev";
+            this.labelRev.Size = new System.Drawing.Size(214, 106);
+            this.labelRev.TabIndex = 3;
+            this.labelRev.Text = "الارباح: 0000000";
+            this.labelRev.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label3
+            // labelIncome
             // 
-            this.label3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label3.Dock = System.Windows.Forms.DockStyle.Left;
-            this.label3.Location = new System.Drawing.Point(214, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(214, 106);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "المقبوضات: 0000000";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.labelIncome.BackColor = System.Drawing.Color.Gold;
+            this.labelIncome.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.labelIncome.Dock = System.Windows.Forms.DockStyle.Left;
+            this.labelIncome.Location = new System.Drawing.Point(214, 0);
+            this.labelIncome.Name = "labelIncome";
+            this.labelIncome.Size = new System.Drawing.Size(214, 106);
+            this.labelIncome.TabIndex = 2;
+            this.labelIncome.Text = "المقبوضات: 0000000";
+            this.labelIncome.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label2
+            // labelOutcome
             // 
-            this.label2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label2.Dock = System.Windows.Forms.DockStyle.Left;
-            this.label2.Location = new System.Drawing.Point(0, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(214, 106);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "المصروفات: 0000000";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.labelOutcome.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.labelOutcome.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.labelOutcome.Dock = System.Windows.Forms.DockStyle.Left;
+            this.labelOutcome.Location = new System.Drawing.Point(0, 0);
+            this.labelOutcome.Name = "labelOutcome";
+            this.labelOutcome.Size = new System.Drawing.Size(214, 106);
+            this.labelOutcome.TabIndex = 1;
+            this.labelOutcome.Text = "المصروفات: 0000000";
+            this.labelOutcome.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label1
             // 
@@ -147,6 +149,7 @@ namespace Asrfly.Gui.GuiProjects
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "أدارة المشروع";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Activated += new System.EventHandler(this.ProjectManagmentForm_Activated);
             this.panel1.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -156,9 +159,9 @@ namespace Asrfly.Gui.GuiProjects
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label labelRev;
+        private System.Windows.Forms.Label labelIncome;
+        private System.Windows.Forms.Label labelOutcome;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Panel panelIncome;

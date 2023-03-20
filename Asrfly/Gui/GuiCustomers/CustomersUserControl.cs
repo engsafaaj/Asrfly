@@ -12,6 +12,7 @@ using System.IO;
 using System.Text;
 using System.Windows.Forms;
 using System.Linq;
+using System.Threading.Tasks;
 
 namespace Asrfly.Gui.GuiCustomers
 {
@@ -19,17 +20,22 @@ namespace Asrfly.Gui.GuiCustomers
     {
         // Variables
         private readonly IDataHelper<Customers> dataHelper;
+        private IDataHelper<Income> dataHelperIncome;
         private readonly IDataHelper<SystemRecords> dataHelperSystemRecords;
         private static CustomersUserControl _CustomersUserControl;
         private int RowId;
         private readonly GuiLoading.LoadingForm loadingForm;
         private List<int> IdList = new List<int>();
         private string SearchItem;
+        private double IncomeAmount;
+
         // Constructors
         public CustomersUserControl()
         {
             InitializeComponent();
             dataHelper = (IDataHelper<Customers>)ConfigrationObjectManager.GetObject("Customers");
+            dataHelperIncome = (IDataHelper<Income>)ConfigrationObjectManager.GetObject("Income");
+
             dataHelperSystemRecords = (IDataHelper<SystemRecords>)ConfigrationObjectManager.GetObject("SystemRecords");
             loadingForm = new GuiLoading.LoadingForm();
             LoadData();
@@ -171,6 +177,8 @@ namespace Asrfly.Gui.GuiCustomers
         {
             loadingForm.Show();
             var data = await dataHelper.GetAllDataAsync();
+            var ListOfCustomerId = data.Select(x => x.Id).ToList();
+            await Task.Run(() => UpdateData(ListOfCustomerId));
             dataGridView1.DataSource = data.Take(Properties.Settings.Default.DataGridViewRowNo).ToList();
 
             // Add No of Page into Combo Box
@@ -303,10 +311,34 @@ namespace Asrfly.Gui.GuiCustomers
 
         }
 
+        private void UpdateData(List<int> ListOfCustomerstId)
+        {
+            // Get Data
+
+            // Loop into CategoriesId
+            for (int i = 0; i < ListOfCustomerstId.Count; i++)
+            {
+                var CustomerId = ListOfCustomerstId[i];
+                try
+                {
+                    IncomeAmount = dataHelperIncome.GetAllData()
+                    .Where(x => x.SupplierId == CustomerId)
+                    .Select(x => x.Amount).ToArray().Sum();
+                  
+                }
+                catch { }
+                // Set Data
+                Customers customers = dataHelper.GetAllData()
+                    .Where(x => x.Id == CustomerId).First();
+                customers.Balance = IncomeAmount;
+                dataHelper.Edit(customers);
+            }
+
+        }
 
         #endregion
 
-       
+
     }
 }
 

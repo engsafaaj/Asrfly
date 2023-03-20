@@ -247,7 +247,7 @@ namespace Asrfly.Gui.GuiOutcome
                                                                                        // Auto Complete
             AutoCompleteStringCollection autoCompleteStringCategories = new AutoCompleteStringCollection();
             autoCompleteStringCategories.AddRange(ListCategories.Select(x => x.Name).ToArray());
-            comboBoxsupplier.AutoCompleteCustomSource = autoCompleteStringCategories;
+            comboBoxCategory.AutoCompleteCustomSource = autoCompleteStringCategories;
 
             ListCategories.Clear(); // clear 
 
@@ -305,7 +305,7 @@ namespace Asrfly.Gui.GuiOutcome
                                                                                            // Auto Complete
                 AutoCompleteStringCollection autoCompleteStringCategories = new AutoCompleteStringCollection();
                 autoCompleteStringCategories.AddRange(ListCategories.Select(x => x.Name).ToArray());
-                comboBoxsupplier.AutoCompleteCustomSource = autoCompleteStringCategories;
+                comboBoxCategory.AutoCompleteCustomSource = autoCompleteStringCategories;
 
                 ListCategories.Clear(); // clear 
             }

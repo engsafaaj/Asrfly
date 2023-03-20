@@ -158,7 +158,7 @@ namespace Asrfly.Gui.GuiIncome
             income = new Income
             {
                 CategoryName = comboBoxCategory.SelectedItem.ToString(),
-                SupplierName = comboBoxCategory.SelectedItem.ToString(),
+                SupplierName = comboBoxsupplier.SelectedItem.ToString(),
                 RecNo = textBoxRecNo.Text,
                 Details = richTextBoxDetails.Text,
                 Amount = Convert.ToDouble(textBoxAmount.Text),
@@ -196,7 +196,7 @@ namespace Asrfly.Gui.GuiIncome
             {
                 Id = ID,
                 CategoryName = comboBoxCategory.SelectedItem.ToString(),
-                SupplierName = comboBoxCategory.SelectedItem.ToString(),
+                SupplierName = comboBoxsupplier.SelectedItem.ToString(),
                 RecNo = textBoxRecNo.Text,
                 Details = richTextBoxDetails.Text,
                 Amount = Convert.ToDouble(textBoxAmount.Text),
@@ -247,7 +247,7 @@ namespace Asrfly.Gui.GuiIncome
                                                                                        // Auto Complete
             AutoCompleteStringCollection autoCompleteStringCategories = new AutoCompleteStringCollection();
             autoCompleteStringCategories.AddRange(ListCategories.Select(x => x.Name).ToArray());
-            comboBoxsupplier.AutoCompleteCustomSource = autoCompleteStringCategories;
+            comboBoxCategory.AutoCompleteCustomSource = autoCompleteStringCategories;
 
             ListCategories.Clear(); // clear 
 
@@ -305,7 +305,7 @@ namespace Asrfly.Gui.GuiIncome
                                                                                            // Auto Complete
                 AutoCompleteStringCollection autoCompleteStringCategories = new AutoCompleteStringCollection();
                 autoCompleteStringCategories.AddRange(ListCategories.Select(x => x.Name).ToArray());
-                comboBoxsupplier.AutoCompleteCustomSource = autoCompleteStringCategories;
+                comboBoxCategory.AutoCompleteCustomSource = autoCompleteStringCategories;
 
                 ListCategories.Clear(); // clear 
             }

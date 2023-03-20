@@ -12,6 +12,7 @@ using System.IO;
 using System.Text;
 using System.Windows.Forms;
 using System.Linq;
+using System.Threading.Tasks;
 
 namespace Asrfly.Gui.GuiProjects
 {
@@ -19,17 +20,25 @@ namespace Asrfly.Gui.GuiProjects
     {
         // Variables
         private readonly IDataHelper<Projects> dataHelper;
+        private IDataHelper<Income> dataHelperIncome;
+        private IDataHelper<Outcome> dataHelperOutcome;
         private readonly IDataHelper<SystemRecords> dataHelperSystemRecords;
         private static ProjectsUserControl _ProjectsUserControl;
         private int RowId;
         private readonly GuiLoading.LoadingForm loadingForm;
         private List<int> IdList = new List<int>();
         private string SearchItem;
+        private double IncomeAmount;
+        private double OutcomeAmount;
+        private List<int> ListOfProjectId=new List<int>();
+
         // Constructors
         public ProjectsUserControl()
         {
             InitializeComponent();
             dataHelper = (IDataHelper<Projects>)ConfigrationObjectManager.GetObject("Projects");
+            dataHelperIncome = (IDataHelper<Income>)ConfigrationObjectManager.GetObject("Income");
+            dataHelperOutcome = (IDataHelper<Outcome>)ConfigrationObjectManager.GetObject("Outcome");
             dataHelperSystemRecords = (IDataHelper<SystemRecords>)ConfigrationObjectManager.GetObject("SystemRecords");
             loadingForm = new GuiLoading.LoadingForm();
             LoadData();
@@ -159,6 +168,7 @@ namespace Asrfly.Gui.GuiProjects
         {
             ProjectExplor();
         }
+
         private void buttonOpen_Click(object sender, EventArgs e)
         {
             ProjectExplor();
@@ -189,6 +199,8 @@ namespace Asrfly.Gui.GuiProjects
         {
             loadingForm.Show();
             var data = await dataHelper.GetAllDataAsync();
+            ListOfProjectId = data.Select(x => x.Id).ToList();
+           await Task.Run(()=> UpdateData(ListOfProjectId));
             dataGridView1.DataSource = data.Take(Properties.Settings.Default.DataGridViewRowNo).ToList();
 
             // Add No of Page into Combo Box
@@ -340,10 +352,35 @@ namespace Asrfly.Gui.GuiProjects
 
         }
 
+        private void UpdateData(List<int> ListOfProjectId)
+        {
+            // Get Data
+          
+            // Loop into CategoriesId
+            for (int i = 0; i < ListOfProjectId.Count; i++)
+            {
+                var ProjectId = ListOfProjectId[i];
+                try
+                {
+                    IncomeAmount = dataHelperIncome.GetAllData()
+                    .Where(x => x.ProjectId == ProjectId)
+                    .Select(x => x.Amount).ToArray().Sum();
+                    OutcomeAmount = dataHelperOutcome.GetAllData()
+                    .Where(x => x.ProjectId == ProjectId)
+                    .Select(x => x.Amount).ToArray().Sum();
+                }
+                catch { }
+                // Set Data
+                Projects projects = dataHelper.GetAllData()
+                    .Where(x => x.Id == ProjectId).First();
+                projects.Income = IncomeAmount;
+                projects.Outcome = OutcomeAmount;
+                projects.Revenue = IncomeAmount-OutcomeAmount;
+                dataHelper.Edit(projects);
+            }
 
-
+        }
         #endregion
-
 
     }
 }
