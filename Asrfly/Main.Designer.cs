@@ -140,6 +140,7 @@ namespace Asrfly
             this.buttonUsers.TabIndex = 5;
             this.buttonUsers.Text = "     المستخدمين";
             this.buttonUsers.UseVisualStyleBackColor = true;
+            this.buttonUsers.Click += new System.EventHandler(this.buttonUsers_Click);
             // 
             // buttonSettings
             // 

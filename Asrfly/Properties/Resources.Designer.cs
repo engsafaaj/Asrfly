@@ -375,6 +375,17 @@ namespace Asrfly.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap pict_employee_male_business_people_vector_stencils_library_png_diagram_flowchart_example {
+            get {
+                object obj = ResourceManager.GetObject("pict_employee_male_business_people_vector_stencils_library_png_diagram_flowchart_" +
+                        "example", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to خطا اتصال في السيرفر.
         /// </summary>
         internal static string ServerErrorCaption {

@@ -17,9 +17,9 @@ namespace Asrfly
         {
             InitializeComponent();
             pageManager = new PageManager(this);
-
             // Load Home Page
             pageManager.LoadPage(Gui.GuiHome.HomeUserControl.Instance());
+            SetRoles();
 
         }
 
@@ -52,6 +52,21 @@ namespace Asrfly
         {
             // Load Projects Page
             pageManager.LoadPage(Gui.GuiProjects.ProjectsUserControl.Instance());
+        }
+
+        private void buttonUsers_Click(object sender, EventArgs e)
+        {
+            // Load Users Page
+            pageManager.LoadPage(Gui.GuiUsers.UsersControl.Instance());
+        }
+
+        private void SetRoles()
+        {
+            if (!UsersRolesManager.GetRole("checkBoxHome"))
+            {
+                buttonHome.Visible = false;
+            }
+            
         }
     }
 }

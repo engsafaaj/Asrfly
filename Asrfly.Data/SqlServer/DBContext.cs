@@ -29,6 +29,8 @@ namespace Asrfly.Data.SqlServer
         public DbSet<Projects> Projects { get; set; }
         public DbSet<Outcome> Outcome { get; set; }
         public DbSet<Income> Income { get; set; }
+        public DbSet<Users> Users { get; set; }
+        public DbSet<UsersRoles> UsersRoles { get; set; }
 
     }
 }

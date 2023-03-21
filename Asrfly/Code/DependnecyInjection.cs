@@ -16,6 +16,8 @@ namespace Asrfly.Code
             ConfigrationObjectManager.Register("Projects", new ProjectsEntity ());
             ConfigrationObjectManager.Register("Outcome", new OutcomeEntity ());
             ConfigrationObjectManager.Register("Income", new IncomeEntity ());
+            ConfigrationObjectManager.Register("Users", new UsersEntity ());
+            ConfigrationObjectManager.Register("UsersRoles", new UsersRolesRolesEntity ());
         }
     }
 }

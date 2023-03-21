@@ -14,16 +14,16 @@ using System.Windows.Forms;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Asrfly.Gui.GuiCategories
+namespace Asrfly.Gui.GuiUsers
 {
-    public partial class CategoryUserControl : UserControl
+    public partial class UsersControl : UserControl
     {
         // Variables
-        private readonly IDataHelper<Categories> dataHelper;
+        private readonly IDataHelper<Users> dataHelper;
         private readonly IDataHelper<Income> dataHelperIncome;
         private readonly IDataHelper<Outcome> dataHelperOutcome;
         private readonly IDataHelper<SystemRecords> dataHelperSystemRecords;
-        private static CategoryUserControl _CategoryUserControl;
+        private static UsersControl _CategoryUserControl;
         private int RowId;
         private readonly GuiLoading.LoadingForm loadingForm;
         private List<int> IdList = new List<int>();
@@ -31,11 +31,10 @@ namespace Asrfly.Gui.GuiCategories
         private double Amount;
 
         // Constructors
-        public CategoryUserControl()
+        public UsersControl()
         {
             InitializeComponent();
-            SetRoles();
-            dataHelper = (IDataHelper<Categories>)ConfigrationObjectManager.GetObject("Categories");
+            dataHelper = (IDataHelper<Users>)ConfigrationObjectManager.GetObject("Users");
             dataHelperIncome = (IDataHelper<Income>)ConfigrationObjectManager.GetObject("Income");
             dataHelperOutcome = (IDataHelper<Outcome>)ConfigrationObjectManager.GetObject("Outcome");
             dataHelperSystemRecords = (IDataHelper<SystemRecords>)ConfigrationObjectManager.GetObject("SystemRecords");
@@ -45,7 +44,7 @@ namespace Asrfly.Gui.GuiCategories
         #region Events
         private void buttonAdd_Click(object sender, EventArgs e)
         {
-            AddCategoryForm addCategoryForm = new AddCategoryForm(0, this);
+            AddUserForm addCategoryForm = new AddUserForm(0, this);
             addCategoryForm.Show();
         }
 
@@ -77,7 +76,7 @@ namespace Asrfly.Gui.GuiCategories
                                 {
                                     Title = "عملية حذف",
                                     UserName = Properties.Settings.Default.UserName,
-                                    Details = "تم حذف صنف ذي الرقم التعريفي " + RowId.ToString(),
+                                    Details = "تم حذف مستخدم ذي الرقم التعريفي " + RowId.ToString(),
                                     AddedDate = DateTime.Now
                                 };
                                 await dataHelperSystemRecords.AddAsync(systemRecords);
@@ -149,9 +148,9 @@ namespace Asrfly.Gui.GuiCategories
         #endregion
 
         #region Methods
-        public static CategoryUserControl Instance()
+        public static UsersControl Instance()
         {
-            return _CategoryUserControl ?? (new CategoryUserControl());
+            return _CategoryUserControl ?? (new UsersControl());
         }
 
         public async void LoadData()
@@ -187,10 +186,11 @@ namespace Asrfly.Gui.GuiCategories
         {
             dataGridView1.Columns[0].HeaderText = "المعرف";
             dataGridView1.Columns[1].HeaderText = "الاسم";
-            dataGridView1.Columns[2].HeaderText = "النوع";
-            dataGridView1.Columns[3].HeaderText = "التفاصيل";
-            dataGridView1.Columns[4].HeaderText = "الرصيد";
-            dataGridView1.Columns[5].HeaderText = "تاريخ الاضافة";
+            dataGridView1.Columns[2].HeaderText = "اسم المستخدم";
+            dataGridView1.Columns[3].HeaderText = "كلمة السر";
+            dataGridView1.Columns[4].HeaderText = "الايميل";
+            dataGridView1.Columns[5].HeaderText = "رقم الهاتف";
+            dataGridView1.Columns[6].HeaderText = "تاريخ الاضافة";
         }
 
         private void Edit()
@@ -199,7 +199,7 @@ namespace Asrfly.Gui.GuiCategories
             {
                 // Get Id
                 RowId = Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value);
-                AddCategoryForm addCategoryForm = new AddCategoryForm(RowId, this);
+                AddUserForm addCategoryForm = new AddUserForm(RowId, this);
                 addCategoryForm.Show();
             }
             else
@@ -308,58 +308,9 @@ namespace Asrfly.Gui.GuiCategories
             data.Clear();
         }
 
-        private void UpdateData()
+
+        private  void CategoryUserControl_Leave(object sender, EventArgs e)
         {
-            // Get Data
-            var CategoriesId = dataHelper.GetAllData().Select(x => x.Id).ToList();
-
-            // Loop into CategoriesId
-            for (int i=0;i< CategoriesId.Count; i++)
-            {
-                var CategoryId = CategoriesId[i];
-                try
-                {
-                    Amount = dataHelperIncome.GetAllData()
-                    .Where(x => x.CategroyId == CategoryId)
-                    .Select(x => x.Amount).ToArray().Sum();
-                }
-                catch { }
-                // Set Data
-                Categories categories = dataHelper.GetAllData()
-                    .Where(x => x.Id == CategoryId).First();
-                categories.Balance = Amount;
-                dataHelper.Edit(categories);
-            }
-            for (int j = 0; j < CategoriesId.Count; j++)
-            {
-                var CategoryId = CategoriesId[j];
-                try
-                {
-                    Amount = dataHelperOutcome.GetAllData()
-                    .Where(x => x.CategroyId == CategoryId)
-                    .Select(x => x.Amount).ToArray().Sum();
-                }
-                catch { }
-                // Set Data
-                Categories categories = dataHelper.GetAllData()
-                    .Where(x => x.Id == CategoryId).First();
-                categories.Balance = Amount;
-                dataHelper.Edit(categories);
-            }
-        }
-
-        private async void CategoryUserControl_Leave(object sender, EventArgs e)
-        {
-            await Task.Run(() => UpdateData());
-        }
-
-        private void SetRoles()
-        {
-            if (!UsersRolesManager.GetRole("checkBoxAdd"))
-            {
-                buttonAdd.Visible = false;
-            }
-
         }
     }
 }

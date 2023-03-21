@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Asrfly.Code;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -14,11 +15,20 @@ namespace Asrfly.Gui.GuiHome
         public HomeUserControl()
         {
             InitializeComponent();
+            SetRoles();
         }
 
         public static HomeUserControl Instance()
         {
             return _HomeUserControl ?? (new HomeUserControl());
+        }
+
+        private void SetRoles()
+        {
+            if (!UsersRolesManager.GetRole("checkBoxAccessCategory"))
+            {
+                buttonAddCategory.Visible = false;
+            }
         }
     }
 }
