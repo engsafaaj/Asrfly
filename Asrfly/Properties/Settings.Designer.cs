@@ -70,5 +70,29 @@ namespace Asrfly.Properties {
                 this["DataGridViewRowNo"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("ادخل هنا اسم المؤسسة")]
+        public string CompanyName {
+            get {
+                return ((string)(this["CompanyName"]));
+            }
+            set {
+                this["CompanyName"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string CompanyLogo {
+            get {
+                return ((string)(this["CompanyLogo"]));
+            }
+            set {
+                this["CompanyLogo"] = value;
+            }
+        }
     }
 }

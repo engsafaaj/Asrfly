@@ -34,6 +34,7 @@ namespace Asrfly.Gui.GuiUsers
         public UsersControl()
         {
             InitializeComponent();
+            SetRoles();
             dataHelper = (IDataHelper<Users>)ConfigrationObjectManager.GetObject("Users");
             dataHelperIncome = (IDataHelper<Income>)ConfigrationObjectManager.GetObject("Income");
             dataHelperOutcome = (IDataHelper<Outcome>)ConfigrationObjectManager.GetObject("Outcome");
@@ -284,9 +285,6 @@ namespace Asrfly.Gui.GuiUsers
 
         }
 
-
-        #endregion
-
         private async void comboBoxPageNo_SelectedIndexChanged(object sender, EventArgs e)
         {
             loadingForm.Show();
@@ -308,10 +306,35 @@ namespace Asrfly.Gui.GuiUsers
             data.Clear();
         }
 
+        private void SetRoles()
+        {
+            if (!UsersRolesManager.GetRole("checkBoxAdd"))
+            {
+                buttonAdd.Visible = false;
+            }
+            if (!UsersRolesManager.GetRole("checkBoxDelete"))
+            {
+                buttonDelete.Visible = false;
+            }
+            if (!UsersRolesManager.GetRole("checkBoxEdit"))
+            {
+                buttonEdit.Visible = false;
+            }
+            if (!UsersRolesManager.GetRole("checkBoxSearch"))
+            {
+                panel1.Visible = false;
+            }
 
-        private  void CategoryUserControl_Leave(object sender, EventArgs e)
+
+
+        }
+
+        private void CategoryUserControl_Leave(object sender, EventArgs e)
         {
         }
+
+        #endregion
+
     }
 }
 

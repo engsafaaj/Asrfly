@@ -153,6 +153,7 @@ namespace Asrfly
             this.buttonSettings.TabIndex = 6;
             this.buttonSettings.Text = "الاعدادات";
             this.buttonSettings.UseVisualStyleBackColor = true;
+            this.buttonSettings.Click += new System.EventHandler(this.buttonSettings_Click);
             // 
             // buttonLogout
             // 

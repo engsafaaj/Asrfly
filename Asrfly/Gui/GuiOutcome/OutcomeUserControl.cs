@@ -31,6 +31,7 @@ namespace Asrfly.Gui.GuiOutcome
         public OutcomeUserControl(int ProjectId)
         {
             InitializeComponent();
+            SetRoles();
             this.ProjectId = ProjectId;
             dataHelper = (IDataHelper<Outcome>)ConfigrationObjectManager.GetObject("Outcome");
             dataHelperSystemRecords = (IDataHelper<SystemRecords>)ConfigrationObjectManager.GetObject("SystemRecords");
@@ -326,6 +327,32 @@ namespace Asrfly.Gui.GuiOutcome
         }
 
 
+        private void SetRoles()
+        {
+            if (!UsersRolesManager.GetRole("checkBoxAdd"))
+            {
+                buttonAdd.Visible = false;
+            }
+            if (!UsersRolesManager.GetRole("checkBoxDelete"))
+            {
+                buttonDelete.Visible = false;
+            }
+            if (!UsersRolesManager.GetRole("checkBoxEdit"))
+            {
+                buttonEdit.Visible = false;
+            }
+            if (!UsersRolesManager.GetRole("checkBoxExport"))
+            {
+                buttonExport.Visible = false;
+            }
+            if (!UsersRolesManager.GetRole("checkBoxSearch"))
+            {
+                panel1.Visible = false;
+            }
+
+
+
+        }
 
         #endregion
 

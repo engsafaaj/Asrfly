@@ -359,6 +359,24 @@ namespace Asrfly.Gui.GuiCategories
             {
                 buttonAdd.Visible = false;
             }
+            if (!UsersRolesManager.GetRole("checkBoxDelete"))
+            {
+                buttonDelete.Visible = false;
+            }
+            if (!UsersRolesManager.GetRole("checkBoxEdit"))
+            {
+                buttonEdit.Visible = false;
+            }
+            if (!UsersRolesManager.GetRole("checkBoxExport"))
+            {
+                buttonExport.Visible = false;
+            }
+            if (!UsersRolesManager.GetRole("checkBoxSearch"))
+            {
+                panel1.Visible = false;
+            }
+           
+           
 
         }
     }

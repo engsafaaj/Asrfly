@@ -33,6 +33,7 @@ namespace Asrfly.Gui.GuiSuppliers
         public SuppliersUserControl()
         {
             InitializeComponent();
+            SetRoles();
             dataHelper = (IDataHelper<Suppliers>)ConfigrationObjectManager.GetObject("Suppliers");
             dataHelperOutcome = (IDataHelper<Outcome>)ConfigrationObjectManager.GetObject("Outcome");
             dataHelperSystemRecords = (IDataHelper<SystemRecords>)ConfigrationObjectManager.GetObject("SystemRecords");
@@ -332,6 +333,32 @@ namespace Asrfly.Gui.GuiSuppliers
                 suppliers.Balance = IncomeAmount;
                 dataHelper.Edit(suppliers);
             }
+
+        }
+        private void SetRoles()
+        {
+            if (!UsersRolesManager.GetRole("checkBoxAdd"))
+            {
+                buttonAdd.Visible = false;
+            }
+            if (!UsersRolesManager.GetRole("checkBoxDelete"))
+            {
+                buttonDelete.Visible = false;
+            }
+            if (!UsersRolesManager.GetRole("checkBoxEdit"))
+            {
+                buttonEdit.Visible = false;
+            }
+            if (!UsersRolesManager.GetRole("checkBoxExport"))
+            {
+                buttonExport.Visible = false;
+            }
+            if (!UsersRolesManager.GetRole("checkBoxSearch"))
+            {
+                panel1.Visible = false;
+            }
+
+
 
         }
 

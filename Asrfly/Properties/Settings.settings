@@ -15,5 +15,11 @@
     <Setting Name="DataGridViewRowNo" Type="System.Int32" Scope="User">
       <Value Profile="(Default)">3</Value>
     </Setting>
+    <Setting Name="CompanyName" Type="System.String" Scope="User">
+      <Value Profile="(Default)">ادخل هنا اسم المؤسسة</Value>
+    </Setting>
+    <Setting Name="CompanyLogo" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
   </Settings>
 </SettingsFile>

@@ -36,6 +36,7 @@ namespace Asrfly.Gui.GuiProjects
         public ProjectsUserControl()
         {
             InitializeComponent();
+            SetRoles();
             dataHelper = (IDataHelper<Projects>)ConfigrationObjectManager.GetObject("Projects");
             dataHelperIncome = (IDataHelper<Income>)ConfigrationObjectManager.GetObject("Income");
             dataHelperOutcome = (IDataHelper<Outcome>)ConfigrationObjectManager.GetObject("Outcome");
@@ -380,6 +381,36 @@ namespace Asrfly.Gui.GuiProjects
             }
 
         }
+        private void SetRoles()
+        {
+            if (!UsersRolesManager.GetRole("checkBoxAdd"))
+            {
+                buttonAdd.Visible = false;
+            }
+            if (!UsersRolesManager.GetRole("checkBoxDelete"))
+            {
+                buttonDelete.Visible = false;
+            }
+            if (!UsersRolesManager.GetRole("checkBoxEdit"))
+            {
+                buttonEdit.Visible = false;
+            }
+            if (!UsersRolesManager.GetRole("checkBoxExport"))
+            {
+                buttonExport.Visible = false;
+            }
+            if (!UsersRolesManager.GetRole("checkBoxSearch"))
+            {
+                panel1.Visible = false;
+            }
+            if (!UsersRolesManager.GetRole("checkBoxExplor"))
+            {
+                buttonOpen.Visible = false;
+            }
+
+
+        }
+
         #endregion
 
     }

@@ -31,6 +31,7 @@ namespace Asrfly.Gui.GuiIncome
         public IncomeUserControl(int ProjectId)
         {
             InitializeComponent();
+            SetRoles();
             this.ProjectId = ProjectId;
             dataHelper = (IDataHelper<Income>)ConfigrationObjectManager.GetObject("Income");
             dataHelperSystemRecords = (IDataHelper<SystemRecords>)ConfigrationObjectManager.GetObject("SystemRecords");
@@ -325,6 +326,32 @@ namespace Asrfly.Gui.GuiIncome
 
         }
 
+        private void SetRoles()
+        {
+            if (!UsersRolesManager.GetRole("checkBoxAdd"))
+            {
+                buttonAdd.Visible = false;
+            }
+            if (!UsersRolesManager.GetRole("checkBoxDelete"))
+            {
+                buttonDelete.Visible = false;
+            }
+            if (!UsersRolesManager.GetRole("checkBoxEdit"))
+            {
+                buttonEdit.Visible = false;
+            }
+            if (!UsersRolesManager.GetRole("checkBoxExport"))
+            {
+                buttonExport.Visible = false;
+            }
+            if (!UsersRolesManager.GetRole("checkBoxSearch"))
+            {
+                panel1.Visible = false;
+            }
+
+
+
+        }
 
 
         #endregion

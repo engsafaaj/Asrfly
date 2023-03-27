@@ -15,7 +15,7 @@ namespace Asrfly.Gui.GuiHome
         public HomeUserControl()
         {
             InitializeComponent();
-            SetRoles();
+            //SetRoles();
         }
 
         public static HomeUserControl Instance()
@@ -28,6 +28,34 @@ namespace Asrfly.Gui.GuiHome
             if (!UsersRolesManager.GetRole("checkBoxAccessCategory"))
             {
                 buttonAddCategory.Visible = false;
+            }
+            if (!UsersRolesManager.GetRole("checkBoxAccessCategory"))
+            {
+                buttonAddCategory.Visible = false;
+            }
+            if (!UsersRolesManager.GetRole("checkBoxAccessSupllier"))
+            {
+                buttonAddSupplier.Visible = false;
+            }
+            if (!UsersRolesManager.GetRole("checkBoxAccessCusteorm"))
+            {
+                buttonAddCustomer.Visible = false;
+            }
+            if (!UsersRolesManager.GetRole("checkBoxAccessProjects"))
+            {
+                buttonAddProject.Visible = false;
+            }
+            if (!UsersRolesManager.GetRole("checkBoxAccessUsers"))
+            {
+                buttonAddUser.Visible = false;
+            }
+            if (!UsersRolesManager.GetRole("checkBoxAccessOutcome"))
+            {
+                buttonAddOutput.Visible = false;
+            }
+            if (!UsersRolesManager.GetRole("checkBoxAccesIncome"))
+            {
+                buttonAddInput.Visible = false;
             }
         }
     }
