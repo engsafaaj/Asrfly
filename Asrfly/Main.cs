@@ -19,7 +19,7 @@ namespace Asrfly
             pageManager = new PageManager(this);
             // Load Home Page
             pageManager.LoadPage(Gui.GuiHome.HomeUserControl.Instance());
-           // SetRoles();
+            SetRoles();
 
         }
 
@@ -86,13 +86,9 @@ namespace Asrfly
             {
                 buttonUsers.Visible = false;
             }
-            if (!UsersRolesManager.GetRole("checkBoxUsers"))
-            {
-                buttonUsers.Visible = false;
-            }
             if (!UsersRolesManager.GetRole("checkBoxSettings"))
             {
-                buttonUsers.Visible = false;
+                buttonSettings.Visible = false;
             }
            /* if (!UsersRolesManager.GetRole("checkBoxSystemRecords"))
             {
@@ -103,8 +99,20 @@ namespace Asrfly
 
         private void buttonSettings_Click(object sender, EventArgs e)
         {
-            Gui.GuiSettings.SettingsForm settingsForm = new Gui.GuiSettings.SettingsForm();
+            Gui.GuiSettings.SettingsForm settingsForm = new Gui.GuiSettings.SettingsForm(false);
             settingsForm.Show();
+        }
+
+        private void Main_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void buttonLogout_Click(object sender, EventArgs e)
+        {
+            Gui.GuiUsers.UserLoginForm loginForm = new Gui.GuiUsers.UserLoginForm();
+            loginForm.Show();
+            Hide();
         }
     }
 }

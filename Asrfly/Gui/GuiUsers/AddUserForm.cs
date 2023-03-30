@@ -18,6 +18,7 @@ namespace Asrfly.Gui.GuiUsers
         // Variables
         private readonly int ID;
         private readonly UsersControl categoryUserControl;
+        private readonly bool firstStart;
         private Users users;
         private readonly IDataHelper<Users> dataHelper;
         private readonly IDataHelper<UsersRoles> dataHelperUsersRoles;
@@ -25,7 +26,7 @@ namespace Asrfly.Gui.GuiUsers
         private readonly IDataHelper<SystemRecords> dataHelperSystemRecords;
         private Dictionary<string, bool> ListOfRoles = new Dictionary<string, bool>();
 
-        public AddUserForm(int Id, UsersControl ctegoryUserControl)
+        public AddUserForm(int Id, UsersControl ctegoryUserControl, bool FirstStart)
         {
             InitializeComponent();
             dataHelper = (IDataHelper<Users>)ConfigrationObjectManager.GetObject("Users");
@@ -35,7 +36,7 @@ namespace Asrfly.Gui.GuiUsers
             loadingForm = new GuiLoading.LoadingForm();
             this.ID = Id;
             this.categoryUserControl = ctegoryUserControl;
-
+            firstStart = FirstStart;
         }
 
         #region Events
@@ -59,7 +60,15 @@ namespace Asrfly.Gui.GuiUsers
                     {
                         MessageCollections.ShowUpdateNotificaiton();
                     }
-                    Close();
+                    if (firstStart == true)
+                    {
+                        MessageBox.Show("اعد تشغيل البرنامج لطفا");
+                        Application.Exit();
+                    }
+                    else
+                    {
+                        Close();
+                    }
                 }
                 else
                 {
@@ -102,6 +111,10 @@ namespace Asrfly.Gui.GuiUsers
             loadingForm.Show();
             SetFiledData();
             loadingForm.Hide();
+            if (firstStart == true)
+            {
+                buttonSave.Visible = false;
+            }
 
         }
         #endregion
@@ -334,6 +347,14 @@ namespace Asrfly.Gui.GuiUsers
         private void groupBox1_Enter(object sender, EventArgs e)
         {
 
+        }
+
+        private void AddUserForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            if (firstStart == true)
+            {
+                Application.Exit();
+            }
         }
     }
 }

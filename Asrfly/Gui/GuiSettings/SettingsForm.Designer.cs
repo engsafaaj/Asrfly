@@ -423,6 +423,7 @@ namespace Asrfly.Gui.GuiSettings
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "اعدادات النظام";
             this.Activated += new System.EventHandler(this.SettingsForm_Activated);
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.SettingsForm_FormClosing);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).EndInit();

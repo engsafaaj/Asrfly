@@ -237,6 +237,16 @@ namespace Asrfly.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_login_32px_1 {
+            get {
+                object obj = ResourceManager.GetObject("icons8_login_32px_1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_Logout_32px {
             get {
                 object obj = ResourceManager.GetObject("icons8_Logout_32px", resourceCulture);
@@ -390,6 +400,16 @@ namespace Asrfly.Properties {
         internal static System.Drawing.Bitmap Loading_2 {
             get {
                 object obj = ResourceManager.GetObject("Loading_2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap lockunlock_conv_2 {
+            get {
+                object obj = ResourceManager.GetObject("lockunlock_conv_2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

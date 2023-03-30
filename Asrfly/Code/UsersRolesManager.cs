@@ -17,5 +17,9 @@ namespace Asrfly.Code
         {
             return RolesList[RoleKey];
         }
+        public static void ClearRoles()
+        {
+            RolesList.Clear();
+        }
     }
 }

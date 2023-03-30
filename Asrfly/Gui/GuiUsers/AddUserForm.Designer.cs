@@ -37,18 +37,19 @@ namespace Asrfly.Gui.GuiUsers
             this.label6 = new System.Windows.Forms.Label();
             this.textBoxName = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.textBoxUserName = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.textBoxPassword = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.textBoxEmail = new System.Windows.Forms.TextBox();
-            this.label11 = new System.Windows.Forms.Label();
-            this.textBoxPhoneNumber = new System.Windows.Forms.TextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.textBoxPhoneNumber = new System.Windows.Forms.TextBox();
+            this.textBoxEmail = new System.Windows.Forms.TextBox();
+            this.textBoxPassword = new System.Windows.Forms.TextBox();
+            this.textBoxUserName = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.checkBoxHome = new System.Windows.Forms.CheckBox();
@@ -76,7 +77,6 @@ namespace Asrfly.Gui.GuiUsers
             this.checkBoxExport = new System.Windows.Forms.CheckBox();
             this.checkBoxSearch = new System.Windows.Forms.CheckBox();
             this.checkBoxExplor = new System.Windows.Forms.CheckBox();
-            this.label10 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -186,34 +186,40 @@ namespace Asrfly.Gui.GuiUsers
             this.groupBox1.Text = "معلومات المستخدم";
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
-            // label7
+            // pictureBox1
             // 
-            this.label7.AutoSize = true;
-            this.label7.ForeColor = System.Drawing.Color.Red;
-            this.label7.Location = new System.Drawing.Point(394, 190);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(25, 37);
-            this.label7.TabIndex = 0;
-            this.label7.Text = "*";
+            this.pictureBox1.Image = global::Asrfly.Properties.Resources.pict_employee_male_business_people_vector_stencils_library_png_diagram_flowchart_example;
+            this.pictureBox1.Location = new System.Drawing.Point(394, 35);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(150, 138);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 2;
+            this.pictureBox1.TabStop = false;
             // 
-            // label2
+            // textBoxPhoneNumber
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(404, 263);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(140, 37);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "اسم المستخدم";
+            this.textBoxPhoneNumber.Location = new System.Drawing.Point(20, 477);
+            this.textBoxPhoneNumber.Name = "textBoxPhoneNumber";
+            this.textBoxPhoneNumber.Size = new System.Drawing.Size(347, 45);
+            this.textBoxPhoneNumber.TabIndex = 4;
+            this.textBoxPhoneNumber.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // label3
+            // textBoxEmail
             // 
-            this.label3.AutoSize = true;
-            this.label3.ForeColor = System.Drawing.Color.Red;
-            this.label3.Location = new System.Drawing.Point(373, 260);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(25, 37);
-            this.label3.TabIndex = 0;
-            this.label3.Text = "*";
+            this.textBoxEmail.Location = new System.Drawing.Point(20, 407);
+            this.textBoxEmail.Name = "textBoxEmail";
+            this.textBoxEmail.Size = new System.Drawing.Size(347, 45);
+            this.textBoxEmail.TabIndex = 3;
+            this.textBoxEmail.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // textBoxPassword
+            // 
+            this.textBoxPassword.Location = new System.Drawing.Point(20, 334);
+            this.textBoxPassword.Name = "textBoxPassword";
+            this.textBoxPassword.PasswordChar = '*';
+            this.textBoxPassword.Size = new System.Drawing.Size(347, 45);
+            this.textBoxPassword.TabIndex = 2;
+            this.textBoxPassword.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // textBoxUserName
             // 
@@ -222,15 +228,6 @@ namespace Asrfly.Gui.GuiUsers
             this.textBoxUserName.Size = new System.Drawing.Size(347, 45);
             this.textBoxUserName.TabIndex = 1;
             this.textBoxUserName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(442, 337);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(102, 37);
-            this.label4.TabIndex = 0;
-            this.label4.Text = "كلمة السر";
             // 
             // label8
             // 
@@ -242,14 +239,14 @@ namespace Asrfly.Gui.GuiUsers
             this.label8.TabIndex = 0;
             this.label8.Text = "*";
             // 
-            // textBoxPassword
+            // label11
             // 
-            this.textBoxPassword.Location = new System.Drawing.Point(20, 334);
-            this.textBoxPassword.Name = "textBoxPassword";
-            this.textBoxPassword.PasswordChar = '*';
-            this.textBoxPassword.Size = new System.Drawing.Size(347, 45);
-            this.textBoxPassword.TabIndex = 2;
-            this.textBoxPassword.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(433, 480);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(111, 37);
+            this.label11.TabIndex = 0;
+            this.label11.Text = "رقم الهاتف";
             // 
             // label9
             // 
@@ -260,40 +257,54 @@ namespace Asrfly.Gui.GuiUsers
             this.label9.TabIndex = 0;
             this.label9.Text = "الايميل";
             // 
-            // textBoxEmail
+            // label3
             // 
-            this.textBoxEmail.Location = new System.Drawing.Point(20, 407);
-            this.textBoxEmail.Name = "textBoxEmail";
-            this.textBoxEmail.Size = new System.Drawing.Size(347, 45);
-            this.textBoxEmail.TabIndex = 3;
-            this.textBoxEmail.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.label3.AutoSize = true;
+            this.label3.ForeColor = System.Drawing.Color.Red;
+            this.label3.Location = new System.Drawing.Point(373, 260);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(25, 37);
+            this.label3.TabIndex = 0;
+            this.label3.Text = "*";
             // 
-            // label11
+            // label4
             // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(433, 480);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(111, 37);
-            this.label11.TabIndex = 0;
-            this.label11.Text = "رقم الهاتف";
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(442, 337);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(102, 37);
+            this.label4.TabIndex = 0;
+            this.label4.Text = "كلمة السر";
             // 
-            // textBoxPhoneNumber
+            // label2
             // 
-            this.textBoxPhoneNumber.Location = new System.Drawing.Point(20, 477);
-            this.textBoxPhoneNumber.Name = "textBoxPhoneNumber";
-            this.textBoxPhoneNumber.Size = new System.Drawing.Size(347, 45);
-            this.textBoxPhoneNumber.TabIndex = 4;
-            this.textBoxPhoneNumber.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(404, 263);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(140, 37);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "اسم المستخدم";
             // 
-            // pictureBox1
+            // label7
             // 
-            this.pictureBox1.Image = global::Asrfly.Properties.Resources.pict_employee_male_business_people_vector_stencils_library_png_diagram_flowchart_example;
-            this.pictureBox1.Location = new System.Drawing.Point(394, 35);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(150, 138);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 2;
-            this.pictureBox1.TabStop = false;
+            this.label7.AutoSize = true;
+            this.label7.ForeColor = System.Drawing.Color.Red;
+            this.label7.Location = new System.Drawing.Point(394, 190);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(25, 37);
+            this.label7.TabIndex = 0;
+            this.label7.Text = "*";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Cairo", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label10.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.label10.Location = new System.Drawing.Point(53, 80);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(314, 63);
+            this.label10.TabIndex = 0;
+            this.label10.Text = "اضافة مستخدم جديد";
             // 
             // groupBox2
             // 
@@ -585,17 +596,6 @@ namespace Asrfly.Gui.GuiUsers
             this.checkBoxExplor.Text = "تصفح";
             this.checkBoxExplor.UseVisualStyleBackColor = true;
             // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Cairo", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label10.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.label10.Location = new System.Drawing.Point(53, 80);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(314, 63);
-            this.label10.TabIndex = 0;
-            this.label10.Text = "اضافة مستخدم جديد";
-            // 
             // AddUserForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 37F);
@@ -619,6 +619,7 @@ namespace Asrfly.Gui.GuiUsers
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "اضافة / تعديل مستخدم";
             this.TopMost = true;
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.AddUserForm_FormClosed);
             this.Load += new System.EventHandler(this.AddCategoryForm_Load);
             this.panel1.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);

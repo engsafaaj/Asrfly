@@ -45,7 +45,7 @@ namespace Asrfly.Gui.GuiUsers
         #region Events
         private void buttonAdd_Click(object sender, EventArgs e)
         {
-            AddUserForm addCategoryForm = new AddUserForm(0, this);
+            AddUserForm addCategoryForm = new AddUserForm(0, this,false);
             addCategoryForm.Show();
         }
 
@@ -200,7 +200,7 @@ namespace Asrfly.Gui.GuiUsers
             {
                 // Get Id
                 RowId = Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value);
-                AddUserForm addCategoryForm = new AddUserForm(RowId, this);
+                AddUserForm addCategoryForm = new AddUserForm(RowId, this,false);
                 addCategoryForm.Show();
             }
             else

@@ -166,6 +166,7 @@ namespace Asrfly
             this.buttonLogout.TabIndex = 7;
             this.buttonLogout.Text = "خروج";
             this.buttonLogout.UseVisualStyleBackColor = true;
+            this.buttonLogout.Click += new System.EventHandler(this.buttonLogout_Click);
             // 
             // buttonHelp
             // 
@@ -215,6 +216,7 @@ namespace Asrfly
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Asrfly";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Main_FormClosed);
             this.flowLayoutPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
 

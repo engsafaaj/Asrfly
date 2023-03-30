@@ -19,7 +19,7 @@ namespace Asrfly
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             DependnecyInjection.AddDependencyValues();
-            Application.Run(new Main());
+            Application.Run(new StartForm());
         }
     }
 }

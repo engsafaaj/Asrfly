@@ -15,7 +15,7 @@ namespace Asrfly.Gui.GuiHome
         public HomeUserControl()
         {
             InitializeComponent();
-            //SetRoles();
+            SetRoles();
         }
 
         public static HomeUserControl Instance()

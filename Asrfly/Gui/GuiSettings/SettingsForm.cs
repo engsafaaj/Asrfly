@@ -15,11 +15,14 @@ namespace Asrfly.Gui.GuiSettings
     public partial class SettingsForm : Form
     {
         private LoadingForm loading;
-        public SettingsForm()
+        private readonly bool firstStart;
+
+        public SettingsForm(bool FirstStart)
         {
             InitializeComponent();
             SetGeneralSettings();
             loading = new LoadingForm();
+            firstStart = FirstStart;
         }
 
         private void buttonSaveGeneralSettings_Click(object sender, EventArgs e)
@@ -82,8 +85,8 @@ namespace Asrfly.Gui.GuiSettings
                 SetNetWorkCon(Server, DataBase, UserName, Password, Timout);
             }
 
-            MessageBox.Show("تم حفظ نص الاتصال بنجاح سيتم اعادة تشغيل البرنامج");
-            Application.Restart();
+            MessageBox.Show("تم حفظ نص الاتصال بنجاح , اعد تشغيل البرنامج لطفا");
+            Application.Exit();
 
         }
 
@@ -180,6 +183,14 @@ namespace Asrfly.Gui.GuiSettings
                     loading.Hide();
                     MessageBox.Show(processResult + "لم نتمكن من استعادة  النسخة الاحتياطية بسبب ");
                 }
+            }
+        }
+
+        private void SettingsForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (firstStart == true)
+            {
+                Application.Exit();
             }
         }
     }
