@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -90,10 +91,10 @@ namespace Asrfly
             {
                 buttonSettings.Visible = false;
             }
-           /* if (!UsersRolesManager.GetRole("checkBoxSystemRecords"))
+            if (!UsersRolesManager.GetRole("checkBoxSystemRecords"))
             {
                 buttonSystemRecords.Visible = false;
-            }*/
+            }
            
         }
 
@@ -113,6 +114,24 @@ namespace Asrfly
             Gui.GuiUsers.UserLoginForm loginForm = new Gui.GuiUsers.UserLoginForm();
             loginForm.Show();
             Hide();
+        }
+
+        private void buttonSystemRecords_Click(object sender, EventArgs e)
+        {
+            // Load Users Page
+            pageManager.LoadPage(Gui.GuiSystemRecords.RecordsUserControl.Instance());
+        }
+
+        private void buttonAbout_Click(object sender, EventArgs e)
+        {
+            Gui.GuiAbout.About about = new Gui.GuiAbout.About();
+            about.Show();
+        }
+
+        private void buttonHelp_Click(object sender, EventArgs e)
+        {
+            var url = "https://www.youtube.com/channel/UCUUg8uOn44gIan33tNoFJZA";
+            Process.Start(new ProcessStartInfo { FileName = url, UseShellExecute = true });
         }
     }
 }

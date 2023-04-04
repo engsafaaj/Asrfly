@@ -3,11 +3,10 @@
   <Profiles />
   <Settings>
     <Setting Name="SqlServerConString" Type="System.String" Scope="User">
-      <Value Profile="(Default)">Server=.\SQLEXPRESS;Database=AsrflyDataBase;Trusted_Connection=True;
-</Value>
+      <Value Profile="(Default)">Server=.\SQLEXPRESS;Database=AsrflyDataBase;Trusted_Connection=True</Value>
     </Setting>
     <Setting Name="HideNotificaitonInterval" Type="System.Int32" Scope="User">
-      <Value Profile="(Default)">2000</Value>
+      <Value Profile="(Default)">2</Value>
     </Setting>
     <Setting Name="UserName" Type="System.String" Scope="User">
       <Value Profile="(Default)">صفاء جاسم</Value>

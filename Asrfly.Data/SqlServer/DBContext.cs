@@ -16,9 +16,9 @@ namespace Asrfly.Data.SqlServer
         // Set ConString
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            var sqlcon = @"Server=.\SQLEXPRESS;Database=AsrflyDataBase;Trusted_Connection=True;"; // For Test
+           // var sqlcon = @"Server=.\SQLEXPRESS;Database=AsrflyDataBase;Trusted_Connection=True;"; // For Test
 
-            optionsBuilder.UseSqlServer(sqlcon);
+            optionsBuilder.UseSqlServer(SqlCon.SqlConnetion);
         }
 
         // Tables

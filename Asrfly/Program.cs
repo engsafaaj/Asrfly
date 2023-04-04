@@ -1,4 +1,5 @@
 using Asrfly.Code;
+using Asrfly.Data.SqlServer;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -19,6 +20,7 @@ namespace Asrfly
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             DependnecyInjection.AddDependencyValues();
+            SqlCon.SqlConnetion = Properties.Settings.Default.SqlServerConString;
             Application.Run(new StartForm());
         }
     }

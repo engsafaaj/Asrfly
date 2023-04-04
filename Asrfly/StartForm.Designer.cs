@@ -38,17 +38,17 @@ namespace Asrfly
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::Asrfly.Properties.Resources.Logo_2021;
-            this.pictureBox1.Location = new System.Drawing.Point(103, 33);
+            this.pictureBox1.Image = global::Asrfly.Properties.Resources.Asrfly1;
+            this.pictureBox1.Location = new System.Drawing.Point(107, 32);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(407, 202);
+            this.pictureBox1.Size = new System.Drawing.Size(421, 276);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
             // progressBar1
             // 
-            this.progressBar1.Location = new System.Drawing.Point(59, 304);
+            this.progressBar1.Location = new System.Drawing.Point(57, 347);
             this.progressBar1.Name = "progressBar1";
             this.progressBar1.Size = new System.Drawing.Size(534, 29);
             this.progressBar1.Style = System.Windows.Forms.ProgressBarStyle.Marquee;
@@ -57,7 +57,7 @@ namespace Asrfly
             // labelState
             // 
             this.labelState.AutoSize = true;
-            this.labelState.Location = new System.Drawing.Point(59, 263);
+            this.labelState.Location = new System.Drawing.Point(57, 306);
             this.labelState.Name = "labelState";
             this.labelState.Size = new System.Drawing.Size(70, 37);
             this.labelState.TabIndex = 2;
@@ -68,7 +68,7 @@ namespace Asrfly
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Cairo", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.label2.Location = new System.Drawing.Point(372, 336);
+            this.label2.Location = new System.Drawing.Point(370, 379);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(221, 32);
             this.label2.TabIndex = 2;
@@ -78,7 +78,7 @@ namespace Asrfly
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 37F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(615, 371);
+            this.ClientSize = new System.Drawing.Size(615, 425);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.labelState);
             this.Controls.Add(this.progressBar1);

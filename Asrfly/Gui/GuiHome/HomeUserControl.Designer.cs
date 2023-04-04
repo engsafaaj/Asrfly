@@ -44,11 +44,15 @@ namespace Asrfly.Gui.GuiHome
             this.pictureBoxLogo = new System.Windows.Forms.PictureBox();
             this.labelCompanyName = new System.Windows.Forms.Label();
             this.labelWellcome = new System.Windows.Forms.Label();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.comboBoxProject = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).BeginInit();
+            this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -102,6 +106,7 @@ namespace Asrfly.Gui.GuiHome
             this.buttonAddInput.TabIndex = 1;
             this.buttonAddInput.Text = "قبض";
             this.buttonAddInput.UseVisualStyleBackColor = true;
+            this.buttonAddInput.Click += new System.EventHandler(this.buttonAddInput_Click);
             // 
             // buttonAddOutput
             // 
@@ -114,6 +119,7 @@ namespace Asrfly.Gui.GuiHome
             this.buttonAddOutput.TabIndex = 1;
             this.buttonAddOutput.Text = "صرف";
             this.buttonAddOutput.UseVisualStyleBackColor = true;
+            this.buttonAddOutput.Click += new System.EventHandler(this.buttonAddOutput_Click);
             // 
             // buttonAddUser
             // 
@@ -126,6 +132,7 @@ namespace Asrfly.Gui.GuiHome
             this.buttonAddUser.TabIndex = 1;
             this.buttonAddUser.Text = "   مستخدم";
             this.buttonAddUser.UseVisualStyleBackColor = true;
+            this.buttonAddUser.Click += new System.EventHandler(this.buttonAddUser_Click);
             // 
             // buttonAddProject
             // 
@@ -138,6 +145,7 @@ namespace Asrfly.Gui.GuiHome
             this.buttonAddProject.TabIndex = 1;
             this.buttonAddProject.Text = "مشروع";
             this.buttonAddProject.UseVisualStyleBackColor = true;
+            this.buttonAddProject.Click += new System.EventHandler(this.buttonAddProject_Click);
             // 
             // buttonAddSupplier
             // 
@@ -150,6 +158,7 @@ namespace Asrfly.Gui.GuiHome
             this.buttonAddSupplier.TabIndex = 1;
             this.buttonAddSupplier.Text = "مورد";
             this.buttonAddSupplier.UseVisualStyleBackColor = true;
+            this.buttonAddSupplier.Click += new System.EventHandler(this.buttonAddSupplier_Click);
             // 
             // buttonAddCustomer
             // 
@@ -162,6 +171,7 @@ namespace Asrfly.Gui.GuiHome
             this.buttonAddCustomer.TabIndex = 1;
             this.buttonAddCustomer.Text = "عميل";
             this.buttonAddCustomer.UseVisualStyleBackColor = true;
+            this.buttonAddCustomer.Click += new System.EventHandler(this.buttonAddCustomer_Click);
             // 
             // buttonAddCategory
             // 
@@ -174,6 +184,7 @@ namespace Asrfly.Gui.GuiHome
             this.buttonAddCategory.TabIndex = 1;
             this.buttonAddCategory.Text = "صنف";
             this.buttonAddCategory.UseVisualStyleBackColor = true;
+            this.buttonAddCategory.Click += new System.EventHandler(this.buttonAddCategory_Click);
             // 
             // label1
             // 
@@ -227,11 +238,44 @@ namespace Asrfly.Gui.GuiHome
             this.labelWellcome.Text = "مرحبا بك مجددا صفاء جاسم";
             this.labelWellcome.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
+            // panel3
+            // 
+            this.panel3.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.panel3.Controls.Add(this.comboBoxProject);
+            this.panel3.Controls.Add(this.label2);
+            this.panel3.Location = new System.Drawing.Point(358, 252);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(546, 125);
+            this.panel3.TabIndex = 2;
+            // 
+            // label2
+            // 
+            this.label2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label2.Font = new System.Drawing.Font("Cairo", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label2.Location = new System.Drawing.Point(0, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(546, 49);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "المشاريع";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // comboBoxProject
+            // 
+            this.comboBoxProject.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.comboBoxProject.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
+            this.comboBoxProject.FormattingEnabled = true;
+            this.comboBoxProject.Location = new System.Drawing.Point(12, 77);
+            this.comboBoxProject.Name = "comboBoxProject";
+            this.comboBoxProject.Size = new System.Drawing.Size(531, 45);
+            this.comboBoxProject.TabIndex = 1;
+            this.comboBoxProject.SelectedIndexChanged += new System.EventHandler(this.comboBoxProject_SelectedIndexChanged);
+            // 
             // HomeUserControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 37F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.labelWellcome);
             this.Controls.Add(this.panel1);
@@ -240,12 +284,14 @@ namespace Asrfly.Gui.GuiHome
             this.Name = "HomeUserControl";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.Size = new System.Drawing.Size(1262, 600);
+            this.Load += new System.EventHandler(this.HomeUserControl_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).EndInit();
+            this.panel3.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -267,5 +313,8 @@ namespace Asrfly.Gui.GuiHome
         private System.Windows.Forms.PictureBox pictureBoxLogo;
         private System.Windows.Forms.Label labelCompanyName;
         private System.Windows.Forms.Label labelWellcome;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.ComboBox comboBoxProject;
+        private System.Windows.Forms.Label label2;
     }
 }

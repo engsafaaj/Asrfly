@@ -4,6 +4,15 @@
     <OutputType>WinExe</OutputType>
     <TargetFramework>netcoreapp3.1</TargetFramework>
     <UseWindowsForms>true</UseWindowsForms>
+    <Authors>Tecno U</Authors>
+    <Description>هو اداة ذكية وبسيطة لمتابعة صرفيات المشاريع
+</Description>
+    <Copyright>جميع الحقوق محفوظة لقناة تكنو U 2023</Copyright>
+    <ApplicationIcon>Asrfly.ico</ApplicationIcon>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <WarningLevel>2</WarningLevel>
   </PropertyGroup>
 
   <ItemGroup>
@@ -21,6 +30,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Update="Gui\GuiSystemRecords\RecordsUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Update="Gui\GuiUsers\UserLoginForm.cs">
       <SubType>Form</SubType>
     </Compile>

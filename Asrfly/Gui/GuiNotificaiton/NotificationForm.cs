@@ -13,7 +13,7 @@ namespace Asrfly.Gui.GuiNotificaiton
         public NotificationForm()
         {
             InitializeComponent();
-            timerNotification.Interval = Properties.Settings.Default.HideNotificaitonInterval;
+            timerNotification.Interval = Properties.Settings.Default.HideNotificaitonInterval*1000;
         }
 
         private void labelTitle_Click(object sender, EventArgs e)

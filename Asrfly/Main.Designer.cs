@@ -29,6 +29,7 @@ namespace Asrfly
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.buttonHome = new System.Windows.Forms.Button();
             this.buttonCategory = new System.Windows.Forms.Button();
@@ -38,6 +39,7 @@ namespace Asrfly
             this.buttonUsers = new System.Windows.Forms.Button();
             this.buttonSettings = new System.Windows.Forms.Button();
             this.buttonLogout = new System.Windows.Forms.Button();
+            this.buttonSystemRecords = new System.Windows.Forms.Button();
             this.buttonHelp = new System.Windows.Forms.Button();
             this.buttonAbout = new System.Windows.Forms.Button();
             this.panelContainer = new System.Windows.Forms.Panel();
@@ -55,6 +57,7 @@ namespace Asrfly
             this.flowLayoutPanel1.Controls.Add(this.buttonUsers);
             this.flowLayoutPanel1.Controls.Add(this.buttonSettings);
             this.flowLayoutPanel1.Controls.Add(this.buttonLogout);
+            this.flowLayoutPanel1.Controls.Add(this.buttonSystemRecords);
             this.flowLayoutPanel1.Controls.Add(this.buttonHelp);
             this.flowLayoutPanel1.Controls.Add(this.buttonAbout);
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Bottom;
@@ -168,29 +171,44 @@ namespace Asrfly
             this.buttonLogout.UseVisualStyleBackColor = true;
             this.buttonLogout.Click += new System.EventHandler(this.buttonLogout_Click);
             // 
+            // buttonSystemRecords
+            // 
+            this.buttonSystemRecords.Image = global::Asrfly.Properties.Resources.icons8_moleskine_32px;
+            this.buttonSystemRecords.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonSystemRecords.Location = new System.Drawing.Point(886, 75);
+            this.buttonSystemRecords.Margin = new System.Windows.Forms.Padding(5);
+            this.buttonSystemRecords.Name = "buttonSystemRecords";
+            this.buttonSystemRecords.Size = new System.Drawing.Size(165, 55);
+            this.buttonSystemRecords.TabIndex = 10;
+            this.buttonSystemRecords.Text = "سجل نظام";
+            this.buttonSystemRecords.UseVisualStyleBackColor = true;
+            this.buttonSystemRecords.Click += new System.EventHandler(this.buttonSystemRecords_Click);
+            // 
             // buttonHelp
             // 
             this.buttonHelp.Image = global::Asrfly.Properties.Resources.icons8_help_32px;
             this.buttonHelp.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonHelp.Location = new System.Drawing.Point(886, 75);
+            this.buttonHelp.Location = new System.Drawing.Point(711, 75);
             this.buttonHelp.Margin = new System.Windows.Forms.Padding(5);
             this.buttonHelp.Name = "buttonHelp";
             this.buttonHelp.Size = new System.Drawing.Size(165, 55);
             this.buttonHelp.TabIndex = 8;
             this.buttonHelp.Text = "المساعدة";
             this.buttonHelp.UseVisualStyleBackColor = true;
+            this.buttonHelp.Click += new System.EventHandler(this.buttonHelp_Click);
             // 
             // buttonAbout
             // 
             this.buttonAbout.Image = global::Asrfly.Properties.Resources.icons8_about_32px_1;
             this.buttonAbout.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonAbout.Location = new System.Drawing.Point(711, 75);
+            this.buttonAbout.Location = new System.Drawing.Point(536, 75);
             this.buttonAbout.Margin = new System.Windows.Forms.Padding(5);
             this.buttonAbout.Name = "buttonAbout";
             this.buttonAbout.Size = new System.Drawing.Size(165, 55);
             this.buttonAbout.TabIndex = 9;
             this.buttonAbout.Text = "حول";
             this.buttonAbout.UseVisualStyleBackColor = true;
+            this.buttonAbout.Click += new System.EventHandler(this.buttonAbout_Click);
             // 
             // panelContainer
             // 
@@ -209,6 +227,7 @@ namespace Asrfly
             this.Controls.Add(this.panelContainer);
             this.Controls.Add(this.flowLayoutPanel1);
             this.Font = new System.Drawing.Font("Cairo", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.Name = "Main";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
@@ -236,6 +255,7 @@ namespace Asrfly
         private System.Windows.Forms.Button buttonHelp;
         private System.Windows.Forms.Button buttonAbout;
         public System.Windows.Forms.Panel panelContainer;
+        private System.Windows.Forms.Button buttonSystemRecords;
     }
 }
 
