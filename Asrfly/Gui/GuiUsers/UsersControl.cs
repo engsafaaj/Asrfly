@@ -34,7 +34,7 @@ namespace Asrfly.Gui.GuiUsers
         public UsersControl()
         {
             InitializeComponent();
-            SetRoles();
+           
             dataHelper = (IDataHelper<Users>)ConfigrationObjectManager.GetObject("Users");
             dataHelperIncome = (IDataHelper<Income>)ConfigrationObjectManager.GetObject("Income");
             dataHelperOutcome = (IDataHelper<Outcome>)ConfigrationObjectManager.GetObject("Outcome");
@@ -335,6 +335,10 @@ namespace Asrfly.Gui.GuiUsers
 
         #endregion
 
+        private void UsersControl_Load(object sender, EventArgs e)
+        {
+            SetRoles();
+        }
     }
 }
 

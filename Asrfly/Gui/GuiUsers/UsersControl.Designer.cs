@@ -228,6 +228,7 @@ namespace Asrfly.Gui.GuiUsers
             this.Name = "UsersControl";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.Size = new System.Drawing.Size(1262, 600);
+            this.Load += new System.EventHandler(this.UsersControl_Load);
             this.Leave += new System.EventHandler(this.CategoryUserControl_Leave);
             this.flowLayoutPanel1.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
